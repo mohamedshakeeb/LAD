@@ -1,0 +1,15 @@
+
+varResponseHistoryHeading
+-------------------------------
+<table style="width:741px;border: 1px solid #464646;"><tr style="height:32px;background:#464646;color:#ffffff;text-align:center"><th style="border:1px solid #464646">Task Description</th><th style="border:1px solid #464646">Respondent Name</th><th style="border:1px solid#464646;width:247px;">Respondent Comments</th><th style="border:1px solid #464646">Responded Date</th></tr>
+
+varResponseHistory
+---------------------------------------
+
+{WorkflowVariable:varResponseHistoryHeading}<tr style="height:25px;text-align:center"><td style="border:1px solid #464646">Space Booking Request Submitted</td><td style="border:1px solid #464646">{Common:InitiatorsDisplayName}</td><td style="border:1px solid #464646"></td><td style="border:1px solid #464646">{Common:CurrentDate}</td></tr>
+
+
+varResponseHistoryTable
+----------------------------------------
+
+{WorkflowVariable:varResponseHistory}</Table>

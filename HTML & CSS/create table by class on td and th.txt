@@ -1,0 +1,1 @@
+<table border="1"><tr><th class="theader">Task Description</th><th class="theader">Respondent Name</th><th class="theader">Comments</th><th class="theader">Responded Date</th></tr><tr><td class="tdata">Request Submitted</td><td class="tdata">{Common:InitiatorsDisplayName}</td><td class="tdata"></td><td class="tdata">{Common:CurrentDate}</td></tr>

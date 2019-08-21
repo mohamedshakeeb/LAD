@@ -1,0 +1,12 @@
+<span id="newss"> </span>
+var x = document.getElementById('newss');
+var s = ['John', 'Mark', 'Alex'];
+var i = 0;
+
+(function loop() {
+    console.log(i);
+    x.innerHTML = s[i];
+    if (++i < s.length) {
+        setTimeout(loop, 1000);
+    }
+})();

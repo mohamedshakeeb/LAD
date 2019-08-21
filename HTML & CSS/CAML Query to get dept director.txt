@@ -1,0 +1,24 @@
+//CAML Query to get dept director by pushing dept name //
+
+
+<Query>  
+<Lists>   
+ <List ID="{42AE2561-05AF-4893-A486-6E31CD860BC0}"/> 
+ </Lists>  
+<Where>
+<Eq>      
+<FieldRef Name="Title"/> 
+<Value Type="Text">{WorkflowVariable:varDepartmentName}</Value> 
+   </Eq> 
+ </Where>
+<ViewFields>
+  <FieldRef Name="Department_Director"/>
+</ViewFields>
+</Query>
+
+
+
+
+
+
+

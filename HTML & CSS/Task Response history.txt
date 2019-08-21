@@ -1,0 +1,1 @@
+{WorkflowVariable:varResponseHistory}<tr style="height:25px;text-align:center"><td style="border:1px solid #464646">Event Manager Approved</td><td style="border:1px solid #464646">{Common:LastTaskRespondentDisplayName}</td><td style="border:1px solid #464646">{WorkflowVariable:varApprovalComments}</td><td style="border:1px solid #464646">{Common:CurrentDate}</td></tr>
