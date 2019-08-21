@@ -1,0 +1,1271 @@
+<!DOCTYPE html>
+<html class="hasSidebar hasPageActions hasBreadcrumb conceptual js" dir="ltr" data-css-variable-support="true" data-authenticated="false" data-auth-status-determined="true" data-target="docs" x-ms-format-detection="none" lang="en-us"><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+	<link rel="stylesheet" href="Deploy%20people%20search%20in%20SharePoint%20Server%20%20%20Microsoft%20Docs_files/51-6d3a1e.css"><link rel="stylesheet" href="Deploy%20people%20search%20in%20SharePoint%20Server%20%20%20Microsoft%20Docs_files/override.css"><meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta property="og:title" content="Deploy people search in SharePoint Server">
+	<meta property="og:type" content="website">
+	<meta property="og:url" content="https://docs.microsoft.com/en-us/sharepoint/search/deploy-people-search">
+		<meta property="og:description" content="Learn how to make classic people search work in SharePoint Server.">
+		<meta property="og:image" content="https://docs.microsoft.com/en-us/media/logos/logo-ms-social.png">
+		<meta property="og:image:alt" content="Microsoft Logo">
+
+	<meta name="twitter:card" content="summary">
+	<meta name="twitter:site" content="@docsmsft">
+
+		<meta name="breadcrumb_path" content="/sharepoint/breadcrumb/toc.json">
+<meta name="ms.assetid" content="0864e3e6-37bc-4b43-ae38-6a01f8728e8b">
+<meta name="author" content="tklarsen">
+<meta name="description" content="Learn how to make classic people search work in SharePoint Server.">
+<meta name="ms.author" content="tlarsen">
+<meta name="audience" content="ITPro">
+<meta name="manager" content="pamgreen">
+<meta name="ms.collection" content="IT_Sharepoint_Server_Top">
+<meta name="ms.topic" content="article">
+<meta name="ms.date" content="3/8/2018">
+<meta name="ms.prod" content="sharepoint-server-itpro">
+<meta name="localization_priority" content="Normal">
+<meta name="search.ms_sitename" content="Docs">
+<meta name="search.ms_docsetname" content="OfficeDocs-SharePoint">
+<meta name="version" content="0">
+<meta name="locale" content="en-us">
+<meta name="site_name" content="Docs">
+<meta name="search.ms_product" content="office">
+<meta name="depot_name" content="office.OfficeDocs-SharePoint">
+<meta name="updated_at" content="2019-06-07 09:01 PM">
+<meta name="gitcommit" content="https://github.com/MicrosoftDocs/OfficeDocs-SharePoint-pr/blob/3ca5fb27e6fc8998bae3fc37bdaa3ac182fd1463/SharePoint/SharePointServer/search/deploy-people-search.md">
+<meta name="original_content_git_url" content="https://github.com/MicrosoftDocs/OfficeDocs-SharePoint-pr/blob/live/SharePoint/SharePointServer/search/deploy-people-search.md">
+<meta name="document_id" content="00489ff1-48d5-23ae-e584-73c2149ca651">
+<meta name="document_version_independent_id" content="8400d2ff-f9f6-6728-2e11-3129e2eae4e7">
+<meta name="page_type" content="conceptual">
+<meta name="toc_rel" content="../spstoc/toc.json">
+<meta name="pdf_url_template" content="https://docs.microsoft.com/pdfstore/en-us/office.OfficeDocs-SharePoint/{branchName}{pdfName}">
+<meta name="word_count" content="2375">
+
+	<meta name="scope" content="SharePoint Server">
+<link href="https://docs.microsoft.com/en-us/sharepoint/search/deploy-people-search" rel="canonical">
+	<title>Deploy people search in SharePoint Server | Microsoft Docs</title>
+
+		<link rel="stylesheet" href="Deploy%20people%20search%20in%20SharePoint%20Server%20%20%20Microsoft%20Docs_files/f094b10a.css">
+
+	<link rel="stylesheet" href="Deploy%20people%20search%20in%20SharePoint%20Server%20%20%20Microsoft%20Docs_files/cd54db8b.css">
+
+
+	<script async="" src="Deploy%20people%20search%20in%20SharePoint%20Server%20%20%20Microsoft%20Docs_files/analytics.js"></script><script>
+	var msDocs = {
+		data: {
+			timeOrigin: Date.now(),
+			azureHeaderLocale: 'en-us',
+			contentLocale: 'en-us',
+			contentDir: 'ltr',
+			userLocale: 'en-us',
+			userDir: 'ltr',
+			pageTemplate: 'Conceptual',
+			brand: '',
+			context: {
+
+			},
+			hasComments: true,
+			feedbackSystem: 'GitHub',
+			feedbackGitHubRepo: 'MicrosoftDocs/OfficeDocs-SharePoint',
+			feedbackProductUrl: 'https://sharepoint.uservoice.com/forums/330321-sharepoint-search',
+			contentGitUrl: 'https://github.com/MicrosoftDocs/OfficeDocs-SharePoint/blob/live/SharePoint/SharePointServer/search/deploy-people-search.md',
+		},
+		functions:{},
+		settings:{
+			extendBreadcrumb: true,
+			enableUHFPPE: false
+		}
+	};
+	if (!('Promise' in window && 'resolve' in window.Promise && 'reject' in window.Promise && 'all' in window.Promise && 'race' in window.Promise)) {
+		document.write('<script src="https://static.docs.com/ui/third-party/bluebird/3.5.0/bluebird.min.js" integrity="sha384-aD4BDeDGeLXLpPK4yKeqtZQa9dv4a/7mQ+4L5vwshIYH1Mc2BrXvHd32iHzYCQy5" crossorigin="anonymous"><\/script>');
+	}
+	if (typeof fetch !== 'function') {
+		document.write('<script src="https://static.docs.com/ui/third-party/fetch/2.0.3/fetch.min.js" integrity="sha384-H3LQq82b6Mm80GYRHtRSlTwO9DoXctmYCVEYk9M8mp97lRzs6DuSrHVUg3SBP9w0" crossorigin="anonymous"><\/script>');
+	}
+	if (typeof HTMLTemplateElement === 'undefined') {
+		document.write('<script src="https://static.docs.com/ui/third-party/template/1.4.0/template.min.js" integrity="sha384-1zKzI6ldTVHMU7n0W2HpE/lhHI+UG4D9IIaxbj3kT2UhCWicdTuJkTtnKuu0CQzN" crossorigin="anonymous"><\/script>');
+	}
+	if (typeof URL !== 'function') {
+		document.write('<script src="https://static.docs.com/ui/third-party/url/0.5.7/url.min.js" integrity="sha384-vn7xBMtpSTfzaTRWxj0kVq0UcsbBrTOgZ/M1ISHqe1V358elYva+lfiEC+T8jLPc" crossorigin="anonymous"><\/script>');
+	}
+	</script>
+
+	<script src="Deploy%20people%20search%20in%20SharePoint%20Server%20%20%20Microsoft%20Docs_files/jquery-3.js" integrity="sha384-tsQFqpEReu7ZLhBV2VZlAu7zcOV+rXbYlF2cqB8txI/8aZajjp4Bqd+V6D5IgvKT" crossorigin="anonymous"></script>
+		<script src="Deploy%20people%20search%20in%20SharePoint%20Server%20%20%20Microsoft%20Docs_files/1dadfd7.js"></script><style></style><script src="Deploy%20people%20search%20in%20SharePoint%20Server%20%20%20Microsoft%20Docs_files/jsll-4.js" async="" defer="defer"></script>
+
+<script src="Deploy%20people%20search%20in%20SharePoint%20Server%20%20%20Microsoft%20Docs_files/18-d72213" defer="defer"></script><style>
+			.c-uhfh input[type="search"],
+			.c-uhfh.c-sgl-stck .c-uhfh-actions .c-search input[type="search"] {
+				padding-left: 132px !important;
+			}</style><script async="" src="Deploy%20people%20search%20in%20SharePoint%20Server%20%20%20Microsoft%20Docs_files/t.js"></script><script async="" src="Deploy%20people%20search%20in%20SharePoint%20Server%20%20%20Microsoft%20Docs_files/t_002.js"></script></head>
+
+<body dir="ltr" class="js-focus-visible" lang="en-us">
+<div class="header-holder">
+		<div id="headerAreaHolder" data-bi-name="header">    <div id="headerArea" class="uhf" data-m="{&quot;cN&quot;:&quot;headerArea&quot;,&quot;cT&quot;:&quot;Area_coreuiArea&quot;,&quot;id&quot;:&quot;a1Body&quot;,&quot;sN&quot;:1,&quot;aN&quot;:&quot;Body&quot;}">
+                <div id="headerRegion" data-region-key="headerregion" data-m="{&quot;cN&quot;:&quot;headerRegion&quot;,&quot;cT&quot;:&quot;Region_coreui-region&quot;,&quot;id&quot;:&quot;r1a1&quot;,&quot;sN&quot;:1,&quot;aN&quot;:&quot;a1&quot;}">
+
+    <div id="headerUniversalHeader" data-m="{&quot;cN&quot;:&quot;headerUniversalHeader&quot;,&quot;cT&quot;:&quot;Module_coreui-universalheader&quot;,&quot;id&quot;:&quot;m1r1a1&quot;,&quot;sN&quot;:1,&quot;aN&quot;:&quot;r1a1&quot;}" data-module-id="Category|headerRegion|coreui-region|headerUniversalHeader|coreui-universalheader">
+        
+
+
+
+
+
+		<a id="uhfSkipToMain" class="m-skip-to-main" href="#main" tabindex="0" style="z-index:3000002" data-m="{&quot;cN&quot;:&quot;Skip to content_nonnav&quot;,&quot;id&quot;:&quot;nn1m1r1a1&quot;,&quot;sN&quot;:1,&quot;aN&quot;:&quot;m1r1a1&quot;}">Skip to main content</a>
+
+
+<header role="banner" class="c-uhfh context-uhf c-sgl-stck c-category-header f-transparent" itemscope="itemscope" data-header-footprint="/MSDocs/MSDocsHeader-DocsL1, fromService: True" data-magict="true" itemtype="http://schema.org/Organization">
+	<div class="js-global-head f-closed global-head-cont theme-light" data-m="{&quot;cN&quot;:&quot;Universal Header_cont&quot;,&quot;cT&quot;:&quot;Container&quot;,&quot;id&quot;:&quot;c2m1r1a1&quot;,&quot;sN&quot;:2,&quot;aN&quot;:&quot;m1r1a1&quot;}">
+		<div class="c-uhfh-gcontainer-st">
+			<button type="button" class="c-action-trigger c-glyph glyph-global-nav-button" aria-label="All Microsoft expand to see list of Microsoft products and services" aria-expanded="false" data-m="{&quot;cN&quot;:&quot;Mobile menu button_nonnav&quot;,&quot;id&quot;:&quot;nn1c2m1r1a1&quot;,&quot;sN&quot;:1,&quot;aN&quot;:&quot;c2m1r1a1&quot;}"></button>
+			<button type="button" class="c-action-trigger c-glyph glyph-arrow-htmllegacy" aria-label="Close search" aria-expanded="false" data-m="{&quot;cN&quot;:&quot;Close Search_nonnav&quot;,&quot;id&quot;:&quot;nn2c2m1r1a1&quot;,&quot;sN&quot;:2,&quot;aN&quot;:&quot;c2m1r1a1&quot;}"></button>
+					<a id="uhfLogo" class="c-logo c-sgl-stk-uhfLogo" itemprop="url" href="https://www.microsoft.com/" aria-label="Microsoft" data-m="{&quot;cN&quot;:&quot;GlobalNav_Logo_cont&quot;,&quot;cT&quot;:&quot;Container&quot;,&quot;id&quot;:&quot;c3c2m1r1a1&quot;,&quot;sN&quot;:3,&quot;aN&quot;:&quot;c2m1r1a1&quot;}">
+						<img alt="" itemprop="logo" itemscope="itemscope" class="c-image" src="Deploy%20people%20search%20in%20SharePoint%20Server%20%20%20Microsoft%20Docs_files/RE1Mu3b.png" role="presentation" aria-hidden="true">
+						<span role="presentation" aria-hidden="true">Microsoft</span>
+					</a>
+			<div class="f-mobile-title">
+				<button type="button" class="c-action-trigger c-glyph glyph-chevron-left" aria-label="See more menu options" data-m="{&quot;cN&quot;:&quot;Mobile back button_nonnav&quot;,&quot;id&quot;:&quot;nn4c2m1r1a1&quot;,&quot;sN&quot;:4,&quot;aN&quot;:&quot;c2m1r1a1&quot;}"></button>
+				<span data-global-title="Microsoft home" class="js-mobile-title">Docs</span>
+				<button type="button" class="c-action-trigger c-glyph glyph-chevron-right" aria-label="See more menu options" data-m="{&quot;cN&quot;:&quot;Mobile forward button_nonnav&quot;,&quot;id&quot;:&quot;nn5c2m1r1a1&quot;,&quot;sN&quot;:5,&quot;aN&quot;:&quot;c2m1r1a1&quot;}"></button>
+			</div>
+					<div class="c-show-pipe x-hidden-vp-mobile-st">
+						<a id="uhfCatLogo" class="c-logo c-cat-logo" href="https://docs.microsoft.com/" aria-label="Docs" itemprop="url" data-m="{&quot;cN&quot;:&quot;CatNav_Docs_nav&quot;,&quot;id&quot;:&quot;n6c2m1r1a1&quot;,&quot;sN&quot;:6,&quot;aN&quot;:&quot;c2m1r1a1&quot;}">
+								<span>Docs</span>
+						</a>
+					</div>
+				<div class="cat-logo-button-cont x-hidden">
+						<button type="button" id="uhfCatLogoButton" class="c-cat-logo-button x-hidden" aria-expanded="false" aria-label="Docs" data-m="{&quot;cN&quot;:&quot;Docs_nonnav&quot;,&quot;id&quot;:&quot;nn7c2m1r1a1&quot;,&quot;sN&quot;:7,&quot;aN&quot;:&quot;c2m1r1a1&quot;}">
+							Docs
+						</button>
+				</div>
+
+
+
+			        <nav id="uhf-g-nav" aria-label="Contextual menu" class="c-uhfh-gnav" data-m="{&quot;cN&quot;:&quot;Category nav_cont&quot;,&quot;cT&quot;:&quot;Container&quot;,&quot;id&quot;:&quot;c8c2m1r1a1&quot;,&quot;sN&quot;:8,&quot;aN&quot;:&quot;c2m1r1a1&quot;}">
+            <ul class="js-paddle-items">
+                    <li class="single-link js-nav-menu x-hidden-none-mobile-vp uhf-menu-item">
+                        <a class="c-uhf-nav-link" href="https://docs.microsoft.com/" data-m="{&quot;cN&quot;:&quot;CatNav_Home_nav&quot;,&quot;id&quot;:&quot;n1c8c2m1r1a1&quot;,&quot;sN&quot;:1,&quot;aN&quot;:&quot;c8c2m1r1a1&quot;}"> Home </a>
+                    </li>
+                                        <li class="single-link js-nav-menu uhf-menu-item">
+                            <a id="c-shellmenu_0" class="c-uhf-nav-link" href="https://docs.microsoft.com/windows" data-m="{&quot;cN&quot;:&quot;CatNav_docsWindows_nav&quot;,&quot;id&quot;:&quot;n2c8c2m1r1a1&quot;,&quot;sN&quot;:2,&quot;aN&quot;:&quot;c8c2m1r1a1&quot;}">Windows</a>
+                        </li>
+                        <li class="single-link js-nav-menu uhf-menu-item">
+                            <a id="c-shellmenu_1" class="c-uhf-nav-link" href="https://docs.microsoft.com/azure/" data-m="{&quot;cN&quot;:&quot;CatNav_docsAzure_nav&quot;,&quot;id&quot;:&quot;n3c8c2m1r1a1&quot;,&quot;sN&quot;:3,&quot;aN&quot;:&quot;c8c2m1r1a1&quot;}">Microsoft Azure</a>
+                        </li>
+                        <li class="single-link js-nav-menu uhf-menu-item">
+                            <a id="c-shellmenu_2" class="c-uhf-nav-link" href="https://docs.microsoft.com/visualstudio/products" data-m="{&quot;cN&quot;:&quot;CatNav_docsVisualStudio_nav&quot;,&quot;id&quot;:&quot;n4c8c2m1r1a1&quot;,&quot;sN&quot;:4,&quot;aN&quot;:&quot;c8c2m1r1a1&quot;}">Visual Studio</a>
+                        </li>
+                        <li class="single-link js-nav-menu uhf-menu-item">
+                            <a id="c-shellmenu_3" class="c-uhf-nav-link" href="https://docs.microsoft.com/office/" data-m="{&quot;cN&quot;:&quot;CatNav_docsOffice_nav&quot;,&quot;id&quot;:&quot;n5c8c2m1r1a1&quot;,&quot;sN&quot;:5,&quot;aN&quot;:&quot;c8c2m1r1a1&quot;}">Office</a>
+                        </li>
+                        <li class="nested-menu uhf-menu-item">
+                            <div class="c-uhf-menu js-nav-menu">
+                                <button type="button" id="c-shellmenu_4" aria-expanded="false" data-m="{&quot;cN&quot;:&quot;CatNav_docsMore_nonnav&quot;,&quot;id&quot;:&quot;nn6c8c2m1r1a1&quot;,&quot;sN&quot;:6,&quot;aN&quot;:&quot;c8c2m1r1a1&quot;}" style="white-space:nowrap">More</button>
+
+                                <ul class="" data-class-idn="" aria-hidden="true" data-m="{&quot;cN&quot;:&quot;docsMore_cont&quot;,&quot;cT&quot;:&quot;Container&quot;,&quot;id&quot;:&quot;c7c8c2m1r1a1&quot;,&quot;sN&quot;:7,&quot;aN&quot;:&quot;c8c2m1r1a1&quot;}">
+        <li class="js-nav-menu single-link" data-m="{&quot;cN&quot;:&quot;docsNET_cont&quot;,&quot;cT&quot;:&quot;Container&quot;,&quot;id&quot;:&quot;c1c7c8c2m1r1a1&quot;,&quot;sN&quot;:1,&quot;aN&quot;:&quot;c7c8c2m1r1a1&quot;}">
+            <a id="c-shellmenu_5" class="js-subm-uhf-nav-link" href="https://docs.microsoft.com/dotnet/" data-m="{&quot;cN&quot;:&quot;CatNav_docsNET_nav&quot;,&quot;id&quot;:&quot;n1c1c7c8c2m1r1a1&quot;,&quot;sN&quot;:1,&quot;aN&quot;:&quot;c1c7c8c2m1r1a1&quot;}">.NET</a>
+            
+        </li>
+        <li class="js-nav-menu single-link" data-m="{&quot;cN&quot;:&quot;docsASPNET_cont&quot;,&quot;cT&quot;:&quot;Container&quot;,&quot;id&quot;:&quot;c2c7c8c2m1r1a1&quot;,&quot;sN&quot;:2,&quot;aN&quot;:&quot;c7c8c2m1r1a1&quot;}">
+            <a id="c-shellmenu_6" class="js-subm-uhf-nav-link" href="https://docs.microsoft.com/aspnet/" data-m="{&quot;cN&quot;:&quot;CatNav_docsASPNET_nav&quot;,&quot;id&quot;:&quot;n1c2c7c8c2m1r1a1&quot;,&quot;sN&quot;:1,&quot;aN&quot;:&quot;c2c7c8c2m1r1a1&quot;}">ASP.NET</a>
+            
+        </li>
+        <li class="js-nav-menu single-link" data-m="{&quot;cN&quot;:&quot;docsCpp_cont&quot;,&quot;cT&quot;:&quot;Container&quot;,&quot;id&quot;:&quot;c3c7c8c2m1r1a1&quot;,&quot;sN&quot;:3,&quot;aN&quot;:&quot;c7c8c2m1r1a1&quot;}">
+            <a id="c-shellmenu_7" class="js-subm-uhf-nav-link" href="https://docs.microsoft.com/cpp/" data-m="{&quot;cN&quot;:&quot;CatNav_docsCpp_nav&quot;,&quot;id&quot;:&quot;n1c3c7c8c2m1r1a1&quot;,&quot;sN&quot;:1,&quot;aN&quot;:&quot;c3c7c8c2m1r1a1&quot;}">C++</a>
+            
+        </li>
+        <li class="js-nav-menu single-link" data-m="{&quot;cN&quot;:&quot;docsDynamics_cont&quot;,&quot;cT&quot;:&quot;Container&quot;,&quot;id&quot;:&quot;c4c7c8c2m1r1a1&quot;,&quot;sN&quot;:4,&quot;aN&quot;:&quot;c7c8c2m1r1a1&quot;}">
+            <a id="c-shellmenu_8" class="js-subm-uhf-nav-link" href="https://docs.microsoft.com/dynamics365/" data-m="{&quot;cN&quot;:&quot;CatNav_docsDynamics_nav&quot;,&quot;id&quot;:&quot;n1c4c7c8c2m1r1a1&quot;,&quot;sN&quot;:1,&quot;aN&quot;:&quot;c4c7c8c2m1r1a1&quot;}">Dynamics 365</a>
+            
+        </li>
+        <li class="js-nav-menu single-link" data-m="{&quot;cN&quot;:&quot;docsEducation_cont&quot;,&quot;cT&quot;:&quot;Container&quot;,&quot;id&quot;:&quot;c5c7c8c2m1r1a1&quot;,&quot;sN&quot;:5,&quot;aN&quot;:&quot;c7c8c2m1r1a1&quot;}">
+            <a id="c-shellmenu_9" class="js-subm-uhf-nav-link" href="https://docs.microsoft.com/education/" data-m="{&quot;cN&quot;:&quot;CatNav_docsEducation_nav&quot;,&quot;id&quot;:&quot;n1c5c7c8c2m1r1a1&quot;,&quot;sN&quot;:1,&quot;aN&quot;:&quot;c5c7c8c2m1r1a1&quot;}">Education</a>
+            
+        </li>
+        <li class="js-nav-menu single-link" data-m="{&quot;cN&quot;:&quot;docsEM_cont&quot;,&quot;cT&quot;:&quot;Container&quot;,&quot;id&quot;:&quot;c6c7c8c2m1r1a1&quot;,&quot;sN&quot;:6,&quot;aN&quot;:&quot;c7c8c2m1r1a1&quot;}">
+            <a id="c-shellmenu_10" class="js-subm-uhf-nav-link" href="https://docs.microsoft.com/enterprise-mobility-security/" data-m="{&quot;cN&quot;:&quot;CatNav_docsEM_nav&quot;,&quot;id&quot;:&quot;n1c6c7c8c2m1r1a1&quot;,&quot;sN&quot;:1,&quot;aN&quot;:&quot;c6c7c8c2m1r1a1&quot;}">Enterprise Mobility + Security</a>
+            
+        </li>
+        <li class="js-nav-menu single-link" data-m="{&quot;cN&quot;:&quot;docsHealthVault_cont&quot;,&quot;cT&quot;:&quot;Container&quot;,&quot;id&quot;:&quot;c7c7c8c2m1r1a1&quot;,&quot;sN&quot;:7,&quot;aN&quot;:&quot;c7c8c2m1r1a1&quot;}">
+            <a id="c-shellmenu_11" class="js-subm-uhf-nav-link" href="https://docs.microsoft.com/healthvault/" data-m="{&quot;cN&quot;:&quot;CatNav_docsHealthVault_nav&quot;,&quot;id&quot;:&quot;n1c7c7c8c2m1r1a1&quot;,&quot;sN&quot;:1,&quot;aN&quot;:&quot;c7c7c8c2m1r1a1&quot;}">HealthVault</a>
+            
+        </li>
+        <li class="js-nav-menu single-link" data-m="{&quot;cN&quot;:&quot;docsIntune_cont&quot;,&quot;cT&quot;:&quot;Container&quot;,&quot;id&quot;:&quot;c8c7c8c2m1r1a1&quot;,&quot;sN&quot;:8,&quot;aN&quot;:&quot;c7c8c2m1r1a1&quot;}">
+            <a id="c-shellmenu_12" class="js-subm-uhf-nav-link" href="https://docs.microsoft.com/intune/" data-m="{&quot;cN&quot;:&quot;CatNav_docsIntune_nav&quot;,&quot;id&quot;:&quot;n1c8c7c8c2m1r1a1&quot;,&quot;sN&quot;:1,&quot;aN&quot;:&quot;c8c7c8c2m1r1a1&quot;}">Intune</a>
+            
+        </li>
+        <li class="js-nav-menu single-link" data-m="{&quot;cN&quot;:&quot;docsNuget_cont&quot;,&quot;cT&quot;:&quot;Container&quot;,&quot;id&quot;:&quot;c9c7c8c2m1r1a1&quot;,&quot;sN&quot;:9,&quot;aN&quot;:&quot;c7c8c2m1r1a1&quot;}">
+            <a id="c-shellmenu_13" class="js-subm-uhf-nav-link" href="https://docs.microsoft.com/nuget/" data-m="{&quot;cN&quot;:&quot;CatNav_docsNuget_nav&quot;,&quot;id&quot;:&quot;n1c9c7c8c2m1r1a1&quot;,&quot;sN&quot;:1,&quot;aN&quot;:&quot;c9c7c8c2m1r1a1&quot;}">NuGet</a>
+            
+        </li>
+        <li class="js-nav-menu single-link" data-m="{&quot;cN&quot;:&quot;docsPowerShell_cont&quot;,&quot;cT&quot;:&quot;Container&quot;,&quot;id&quot;:&quot;c10c7c8c2m1r1a1&quot;,&quot;sN&quot;:10,&quot;aN&quot;:&quot;c7c8c2m1r1a1&quot;}">
+            <a id="c-shellmenu_14" class="js-subm-uhf-nav-link" href="https://docs.microsoft.com/powershell/" data-m="{&quot;cN&quot;:&quot;CatNav_docsPowerShell_nav&quot;,&quot;id&quot;:&quot;n1c10c7c8c2m1r1a1&quot;,&quot;sN&quot;:1,&quot;aN&quot;:&quot;c10c7c8c2m1r1a1&quot;}">PowerShell</a>
+            
+        </li>
+        <li class="js-nav-menu single-link" data-m="{&quot;cN&quot;:&quot;docsSCCM_cont&quot;,&quot;cT&quot;:&quot;Container&quot;,&quot;id&quot;:&quot;c11c7c8c2m1r1a1&quot;,&quot;sN&quot;:11,&quot;aN&quot;:&quot;c7c8c2m1r1a1&quot;}">
+            <a id="c-shellmenu_15" class="js-subm-uhf-nav-link" href="https://docs.microsoft.com/sccm/" data-m="{&quot;cN&quot;:&quot;CatNav_docsSCCM_nav&quot;,&quot;id&quot;:&quot;n1c11c7c8c2m1r1a1&quot;,&quot;sN&quot;:1,&quot;aN&quot;:&quot;c11c7c8c2m1r1a1&quot;}">System Center Configuration Manager</a>
+            
+        </li>
+        <li class="js-nav-menu single-link" data-m="{&quot;cN&quot;:&quot;docsSql_cont&quot;,&quot;cT&quot;:&quot;Container&quot;,&quot;id&quot;:&quot;c12c7c8c2m1r1a1&quot;,&quot;sN&quot;:12,&quot;aN&quot;:&quot;c7c8c2m1r1a1&quot;}">
+            <a id="c-shellmenu_16" class="js-subm-uhf-nav-link" href="https://docs.microsoft.com/sql/" data-m="{&quot;cN&quot;:&quot;CatNav_docsSql_nav&quot;,&quot;id&quot;:&quot;n1c12c7c8c2m1r1a1&quot;,&quot;sN&quot;:1,&quot;aN&quot;:&quot;c12c7c8c2m1r1a1&quot;}">SQL Server</a>
+            
+        </li>
+        <li class="js-nav-menu single-link" data-m="{&quot;cN&quot;:&quot;docsSystemCenter_cont&quot;,&quot;cT&quot;:&quot;Container&quot;,&quot;id&quot;:&quot;c13c7c8c2m1r1a1&quot;,&quot;sN&quot;:13,&quot;aN&quot;:&quot;c7c8c2m1r1a1&quot;}">
+            <a id="c-shellmenu_17" class="js-subm-uhf-nav-link" href="https://docs.microsoft.com/system-center/" data-m="{&quot;cN&quot;:&quot;CatNav_docsSystemCenter_nav&quot;,&quot;id&quot;:&quot;n1c13c7c8c2m1r1a1&quot;,&quot;sN&quot;:1,&quot;aN&quot;:&quot;c13c7c8c2m1r1a1&quot;}">System Center</a>
+            
+        </li>
+        <li class="js-nav-menu single-link" data-m="{&quot;cN&quot;:&quot;docsXamarin_cont&quot;,&quot;cT&quot;:&quot;Container&quot;,&quot;id&quot;:&quot;c14c7c8c2m1r1a1&quot;,&quot;sN&quot;:14,&quot;aN&quot;:&quot;c7c8c2m1r1a1&quot;}">
+            <a id="c-shellmenu_18" class="js-subm-uhf-nav-link" href="https://developer.xamarin.com/" data-m="{&quot;cN&quot;:&quot;CatNav_docsXamarin_nav&quot;,&quot;id&quot;:&quot;n1c14c7c8c2m1r1a1&quot;,&quot;sN&quot;:1,&quot;aN&quot;:&quot;c14c7c8c2m1r1a1&quot;}">Xamarin</a>
+            
+        </li>
+                                                    
+                                </ul>
+                            </div>
+                        </li>
+
+                <li id="overflow-menu" class="overflow-menu x-hidden uhf-menu-item">
+                        <div class="c-uhf-menu js-nav-menu">
+        <button data-m="{&quot;pid&quot;:&quot;More&quot;,&quot;id&quot;:&quot;nn8c8c2m1r1a1&quot;,&quot;sN&quot;:8,&quot;aN&quot;:&quot;c8c2m1r1a1&quot;}" type="button" aria-label="More" aria-expanded="false" style="white-space:nowrap">More</button>
+        <ul id="overflow-menu-list" aria-hidden="true" class="overflow-menu-list">
+        </ul>
+    </div>
+
+                </li>
+                            </ul>
+            
+        </nav>
+
+
+			<div class="c-uhfh-actions" data-m="{&quot;cN&quot;:&quot;Header actions_cont&quot;,&quot;cT&quot;:&quot;Container&quot;,&quot;id&quot;:&quot;c9c2m1r1a1&quot;,&quot;sN&quot;:9,&quot;aN&quot;:&quot;c2m1r1a1&quot;}">
+				<div class="wf-menu">        <nav id="uhf-c-nav" aria-label="All microsoft menu" data-m="{&quot;cN&quot;:&quot;GlobalNav_cont&quot;,&quot;cT&quot;:&quot;Container&quot;,&quot;id&quot;:&quot;c1c9c2m1r1a1&quot;,&quot;sN&quot;:1,&quot;aN&quot;:&quot;c9c2m1r1a1&quot;}">
+            <ul class="js-paddle-items">
+                <li>
+                    <div class="c-uhf-menu js-nav-menu">
+                        <button type="button" class="c-button-logo all-ms-nav" aria-label="All Microsoft expand to see list of Microsoft products and services" aria-expanded="false" data-m="{&quot;cN&quot;:&quot;GlobalNav_More_nonnav&quot;,&quot;id&quot;:&quot;nn1c1c9c2m1r1a1&quot;,&quot;sN&quot;:1,&quot;aN&quot;:&quot;c1c9c2m1r1a1&quot;}" style="white-space: nowrap"> <span>All Microsoft</span></button>
+                        <ul class="f-multi-column f-multi-column-6" aria-hidden="true" data-m="{&quot;cN&quot;:&quot;More_cont&quot;,&quot;cT&quot;:&quot;Container&quot;,&quot;id&quot;:&quot;c2c1c9c2m1r1a1&quot;,&quot;sN&quot;:2,&quot;aN&quot;:&quot;c1c9c2m1r1a1&quot;}">
+                                    <li class="c-w0-contr">
+            <ul class="c-w0">
+        <li class="js-nav-menu single-link" data-m="{&quot;cN&quot;:&quot;Office_cont&quot;,&quot;cT&quot;:&quot;Container&quot;,&quot;id&quot;:&quot;c1c2c1c9c2m1r1a1&quot;,&quot;sN&quot;:1,&quot;aN&quot;:&quot;c2c1c9c2m1r1a1&quot;}">
+            <a id="shellmenu_19" class="js-subm-uhf-nav-link" href="https://products.office.com/en-us/home" data-m="{&quot;cN&quot;:&quot;W0Nav_Office_nav&quot;,&quot;id&quot;:&quot;n1c1c2c1c9c2m1r1a1&quot;,&quot;sN&quot;:1,&quot;aN&quot;:&quot;c1c2c1c9c2m1r1a1&quot;}">Office</a>
+            
+        </li>
+        <li class="js-nav-menu single-link" data-m="{&quot;cN&quot;:&quot;Windows_cont&quot;,&quot;cT&quot;:&quot;Container&quot;,&quot;id&quot;:&quot;c2c2c1c9c2m1r1a1&quot;,&quot;sN&quot;:2,&quot;aN&quot;:&quot;c2c1c9c2m1r1a1&quot;}">
+            <a id="shellmenu_20" class="js-subm-uhf-nav-link" href="https://www.microsoft.com/en-us/windows/" data-m="{&quot;cN&quot;:&quot;W0Nav_Windows_nav&quot;,&quot;id&quot;:&quot;n1c2c2c1c9c2m1r1a1&quot;,&quot;sN&quot;:1,&quot;aN&quot;:&quot;c2c2c1c9c2m1r1a1&quot;}">Windows</a>
+            
+        </li>
+        <li class="js-nav-menu single-link" data-m="{&quot;cN&quot;:&quot;Surface_cont&quot;,&quot;cT&quot;:&quot;Container&quot;,&quot;id&quot;:&quot;c3c2c1c9c2m1r1a1&quot;,&quot;sN&quot;:3,&quot;aN&quot;:&quot;c2c1c9c2m1r1a1&quot;}">
+            <a id="shellmenu_21" class="js-subm-uhf-nav-link" href="https://www.microsoft.com/en-us/surface" data-m="{&quot;cN&quot;:&quot;W0Nav_Surface_nav&quot;,&quot;id&quot;:&quot;n1c3c2c1c9c2m1r1a1&quot;,&quot;sN&quot;:1,&quot;aN&quot;:&quot;c3c2c1c9c2m1r1a1&quot;}">Surface</a>
+            
+        </li>
+        <li class="js-nav-menu single-link" data-m="{&quot;cN&quot;:&quot;Xbox_cont&quot;,&quot;cT&quot;:&quot;Container&quot;,&quot;id&quot;:&quot;c4c2c1c9c2m1r1a1&quot;,&quot;sN&quot;:4,&quot;aN&quot;:&quot;c2c1c9c2m1r1a1&quot;}">
+            <a id="shellmenu_22" class="js-subm-uhf-nav-link" href="https://www.xbox.com/" data-m="{&quot;cN&quot;:&quot;W0Nav_Xbox_nav&quot;,&quot;id&quot;:&quot;n1c4c2c1c9c2m1r1a1&quot;,&quot;sN&quot;:1,&quot;aN&quot;:&quot;c4c2c1c9c2m1r1a1&quot;}">Xbox</a>
+            
+        </li>
+        <li class="js-nav-menu single-link" data-m="{&quot;cN&quot;:&quot;Deals_cont&quot;,&quot;cT&quot;:&quot;Container&quot;,&quot;id&quot;:&quot;c5c2c1c9c2m1r1a1&quot;,&quot;sN&quot;:5,&quot;aN&quot;:&quot;c2c1c9c2m1r1a1&quot;}">
+            <a id="shellmenu_23" class="js-subm-uhf-nav-link" href="https://www.microsoft.com/en-us/store/b/sale?icid=gm_nav_L0_salepage" data-m="{&quot;cN&quot;:&quot;W0Nav_Deals_nav&quot;,&quot;id&quot;:&quot;n1c5c2c1c9c2m1r1a1&quot;,&quot;sN&quot;:1,&quot;aN&quot;:&quot;c5c2c1c9c2m1r1a1&quot;}">Deals</a>
+            
+        </li>
+        <li class="js-nav-menu single-link" data-m="{&quot;cN&quot;:&quot;Support_cont&quot;,&quot;cT&quot;:&quot;Container&quot;,&quot;id&quot;:&quot;c6c2c1c9c2m1r1a1&quot;,&quot;sN&quot;:6,&quot;aN&quot;:&quot;c2c1c9c2m1r1a1&quot;}">
+            <a id="l1_support" class="js-subm-uhf-nav-link" href="https://support.microsoft.com/en-us" data-m="{&quot;cN&quot;:&quot;W0Nav_Support_nav&quot;,&quot;id&quot;:&quot;n1c6c2c1c9c2m1r1a1&quot;,&quot;sN&quot;:1,&quot;aN&quot;:&quot;c6c2c1c9c2m1r1a1&quot;}">Support</a>
+            
+        </li>
+            </ul>
+        </li>
+
+        <li class="f-sub-menu js-nav-menu nested-menu" data-m="{&quot;cT&quot;:&quot;Container&quot;,&quot;id&quot;:&quot;c7c2c1c9c2m1r1a1&quot;,&quot;sN&quot;:7,&quot;aN&quot;:&quot;c2c1c9c2m1r1a1&quot;}">
+
+            <button type="button" role="presentation" f-multi-parent="true" aria-expanded="false" data-m="{&quot;id&quot;:&quot;nn1c7c2c1c9c2m1r1a1&quot;,&quot;sN&quot;:1,&quot;aN&quot;:&quot;c7c2c1c9c2m1r1a1&quot;}">Software</button>
+            <ul aria-hidden="true" role="presentation">
+        <li class="js-nav-menu single-link" data-m="{&quot;cN&quot;:&quot;More_Software_WindowsApps_cont&quot;,&quot;cT&quot;:&quot;Container&quot;,&quot;id&quot;:&quot;c2c7c2c1c9c2m1r1a1&quot;,&quot;sN&quot;:2,&quot;aN&quot;:&quot;c7c2c1c9c2m1r1a1&quot;}">
+            <a id="shellmenu_27" class="js-subm-uhf-nav-link" href="https://www.microsoft.com/en-us/windows/windows-10-apps" data-m="{&quot;cN&quot;:&quot;GlobalNav_More_Software_WindowsApps_nav&quot;,&quot;id&quot;:&quot;n1c2c7c2c1c9c2m1r1a1&quot;,&quot;sN&quot;:1,&quot;aN&quot;:&quot;c2c7c2c1c9c2m1r1a1&quot;}">Windows apps</a>
+            
+        </li>
+        <li class="js-nav-menu single-link" data-m="{&quot;cN&quot;:&quot;More_Software_OneDrive_cont&quot;,&quot;cT&quot;:&quot;Container&quot;,&quot;id&quot;:&quot;c3c7c2c1c9c2m1r1a1&quot;,&quot;sN&quot;:3,&quot;aN&quot;:&quot;c7c2c1c9c2m1r1a1&quot;}">
+            <a id="shellmenu_28" class="js-subm-uhf-nav-link" href="https://onedrive.live.com/about/en-us/" data-m="{&quot;cN&quot;:&quot;GlobalNav_More_Software_OneDrive_nav&quot;,&quot;id&quot;:&quot;n1c3c7c2c1c9c2m1r1a1&quot;,&quot;sN&quot;:1,&quot;aN&quot;:&quot;c3c7c2c1c9c2m1r1a1&quot;}">OneDrive</a>
+            
+        </li>
+        <li class="js-nav-menu single-link" data-m="{&quot;cN&quot;:&quot;More_Software_Outlook_cont&quot;,&quot;cT&quot;:&quot;Container&quot;,&quot;id&quot;:&quot;c4c7c2c1c9c2m1r1a1&quot;,&quot;sN&quot;:4,&quot;aN&quot;:&quot;c7c2c1c9c2m1r1a1&quot;}">
+            <a id="shellmenu_29" class="js-subm-uhf-nav-link" href="https://outlook.live.com/owa/" data-m="{&quot;cN&quot;:&quot;GlobalNav_More_Software_Outlook_nav&quot;,&quot;id&quot;:&quot;n1c4c7c2c1c9c2m1r1a1&quot;,&quot;sN&quot;:1,&quot;aN&quot;:&quot;c4c7c2c1c9c2m1r1a1&quot;}">Outlook</a>
+            
+        </li>
+        <li class="js-nav-menu single-link" data-m="{&quot;cN&quot;:&quot;More_Software_Skype_cont&quot;,&quot;cT&quot;:&quot;Container&quot;,&quot;id&quot;:&quot;c5c7c2c1c9c2m1r1a1&quot;,&quot;sN&quot;:5,&quot;aN&quot;:&quot;c7c2c1c9c2m1r1a1&quot;}">
+            <a id="shellmenu_30" class="js-subm-uhf-nav-link" href="https://www.skype.com/en/" data-m="{&quot;cN&quot;:&quot;GlobalNav_More_Software_Skype_nav&quot;,&quot;id&quot;:&quot;n1c5c7c2c1c9c2m1r1a1&quot;,&quot;sN&quot;:1,&quot;aN&quot;:&quot;c5c7c2c1c9c2m1r1a1&quot;}">Skype</a>
+            
+        </li>
+        <li class="js-nav-menu single-link" data-m="{&quot;cN&quot;:&quot;More_Software_OneNote_cont&quot;,&quot;cT&quot;:&quot;Container&quot;,&quot;id&quot;:&quot;c6c7c2c1c9c2m1r1a1&quot;,&quot;sN&quot;:6,&quot;aN&quot;:&quot;c7c2c1c9c2m1r1a1&quot;}">
+            <a id="shellmenu_31" class="js-subm-uhf-nav-link" href="https://www.onenote.com/" data-m="{&quot;cN&quot;:&quot;GlobalNav_More_Software_OneNote_nav&quot;,&quot;id&quot;:&quot;n1c6c7c2c1c9c2m1r1a1&quot;,&quot;sN&quot;:1,&quot;aN&quot;:&quot;c6c7c2c1c9c2m1r1a1&quot;}">OneNote</a>
+            
+        </li>
+            </ul>
+            
+        </li>
+        <li class="f-sub-menu js-nav-menu nested-menu" data-m="{&quot;cN&quot;:&quot;PCsAndDevices_cont&quot;,&quot;cT&quot;:&quot;Container&quot;,&quot;id&quot;:&quot;c8c2c1c9c2m1r1a1&quot;,&quot;sN&quot;:8,&quot;aN&quot;:&quot;c2c1c9c2m1r1a1&quot;}">
+
+            <button type="button" role="presentation" f-multi-parent="true" aria-expanded="false" data-m="{&quot;cN&quot;:&quot;GlobalNav_PCsAndDevices_nonnav&quot;,&quot;id&quot;:&quot;nn1c8c2c1c9c2m1r1a1&quot;,&quot;sN&quot;:1,&quot;aN&quot;:&quot;c8c2c1c9c2m1r1a1&quot;}">PCs &amp; Devices  </button>
+            <ul aria-hidden="true" role="presentation">
+        <li class="js-nav-menu single-link" data-m="{&quot;cN&quot;:&quot;More_PCsAndDevices_PCsAndTablets_cont&quot;,&quot;cT&quot;:&quot;Container&quot;,&quot;id&quot;:&quot;c2c8c2c1c9c2m1r1a1&quot;,&quot;sN&quot;:2,&quot;aN&quot;:&quot;c8c2c1c9c2m1r1a1&quot;}">
+            <a id="shellmenu_33" class="js-subm-uhf-nav-link" href="https://www.microsoft.com/en-us/windows/devices" data-m="{&quot;cN&quot;:&quot;GlobalNav_More_PCsAndDevices_PCsAndTablets_nav&quot;,&quot;id&quot;:&quot;n1c2c8c2c1c9c2m1r1a1&quot;,&quot;sN&quot;:1,&quot;aN&quot;:&quot;c2c8c2c1c9c2m1r1a1&quot;}">PCs &amp; tablets</a>
+            
+        </li>
+        <li class="js-nav-menu single-link" data-m="{&quot;cN&quot;:&quot;More_PCAndDevices_Accessories_cont&quot;,&quot;cT&quot;:&quot;Container&quot;,&quot;id&quot;:&quot;c3c8c2c1c9c2m1r1a1&quot;,&quot;sN&quot;:3,&quot;aN&quot;:&quot;c8c2c1c9c2m1r1a1&quot;}">
+            <a id="shellmenu_34" class="js-subm-uhf-nav-link" href="https://www.microsoft.com/accessories/en-us" data-m="{&quot;cN&quot;:&quot;GlobalNav_More_PCAndDevices_Accessories_nav&quot;,&quot;id&quot;:&quot;n1c3c8c2c1c9c2m1r1a1&quot;,&quot;sN&quot;:1,&quot;aN&quot;:&quot;c3c8c2c1c9c2m1r1a1&quot;}">Accessories</a>
+            
+        </li>
+            </ul>
+            
+        </li>
+        <li class="f-sub-menu js-nav-menu nested-menu" data-m="{&quot;cT&quot;:&quot;Container&quot;,&quot;id&quot;:&quot;c9c2c1c9c2m1r1a1&quot;,&quot;sN&quot;:9,&quot;aN&quot;:&quot;c2c1c9c2m1r1a1&quot;}">
+
+            <button type="button" role="presentation" f-multi-parent="true" aria-expanded="false" data-m="{&quot;id&quot;:&quot;nn1c9c2c1c9c2m1r1a1&quot;,&quot;sN&quot;:1,&quot;aN&quot;:&quot;c9c2c1c9c2m1r1a1&quot;}">Entertainment</button>
+            <ul aria-hidden="true" role="presentation">
+        <li class="js-nav-menu single-link" data-m="{&quot;cN&quot;:&quot;Products_DevicesAndXbox_XboxAndGames_cont&quot;,&quot;cT&quot;:&quot;Container&quot;,&quot;id&quot;:&quot;c2c9c2c1c9c2m1r1a1&quot;,&quot;sN&quot;:2,&quot;aN&quot;:&quot;c9c2c1c9c2m1r1a1&quot;}">
+            <a id="shellmenu_36" class="js-subm-uhf-nav-link" href="https://www.xbox.com/en-us/games/xbox-one?xr=shellnav" data-m="{&quot;cN&quot;:&quot;GlobalNav_Products_DevicesAndXbox_XboxAndGames_nav&quot;,&quot;id&quot;:&quot;n1c2c9c2c1c9c2m1r1a1&quot;,&quot;sN&quot;:1,&quot;aN&quot;:&quot;c2c9c2c1c9c2m1r1a1&quot;}">Xbox games</a>
+            
+        </li>
+        <li class="js-nav-menu single-link" data-m="{&quot;cN&quot;:&quot;Entertainment_PCGames_cont&quot;,&quot;cT&quot;:&quot;Container&quot;,&quot;id&quot;:&quot;c3c9c2c1c9c2m1r1a1&quot;,&quot;sN&quot;:3,&quot;aN&quot;:&quot;c9c2c1c9c2m1r1a1&quot;}">
+            <a id="shellmenu_37" class="js-subm-uhf-nav-link" href="https://www.microsoft.com/en-us/windows/windows-10-games" data-m="{&quot;cN&quot;:&quot;GlobalNav_Entertainment_PCGames_nav&quot;,&quot;id&quot;:&quot;n1c3c9c2c1c9c2m1r1a1&quot;,&quot;sN&quot;:1,&quot;aN&quot;:&quot;c3c9c2c1c9c2m1r1a1&quot;}">PC games</a>
+            
+        </li>
+        <li class="js-nav-menu single-link" data-m="{&quot;cN&quot;:&quot;More_Entertainment_WindowsDigitalGames_cont&quot;,&quot;cT&quot;:&quot;Container&quot;,&quot;id&quot;:&quot;c4c9c2c1c9c2m1r1a1&quot;,&quot;sN&quot;:4,&quot;aN&quot;:&quot;c9c2c1c9c2m1r1a1&quot;}">
+            <a id="shellmenu_38" class="js-subm-uhf-nav-link" href="https://www.microsoft.com/en-us/store/games/windows?icid=TopNavWindowsGames" data-m="{&quot;cN&quot;:&quot;GlobalNav_More_Entertainment_WindowsDigitalGames_nav&quot;,&quot;id&quot;:&quot;n1c4c9c2c1c9c2m1r1a1&quot;,&quot;sN&quot;:1,&quot;aN&quot;:&quot;c4c9c2c1c9c2m1r1a1&quot;}">Windows digital games</a>
+            
+        </li>
+        <li class="js-nav-menu single-link" data-m="{&quot;cN&quot;:&quot;More_Entertainment_MoviesAndTV_cont&quot;,&quot;cT&quot;:&quot;Container&quot;,&quot;id&quot;:&quot;c5c9c2c1c9c2m1r1a1&quot;,&quot;sN&quot;:5,&quot;aN&quot;:&quot;c9c2c1c9c2m1r1a1&quot;}">
+            <a id="shellmenu_39" class="js-subm-uhf-nav-link" href="https://www.microsoft.com/en-us/store/movies-and-tv?icid=TopNavMoviesAndTv" data-m="{&quot;cN&quot;:&quot;GlobalNav_More_Entertainment_MoviesAndTV_nav&quot;,&quot;id&quot;:&quot;n1c5c9c2c1c9c2m1r1a1&quot;,&quot;sN&quot;:1,&quot;aN&quot;:&quot;c5c9c2c1c9c2m1r1a1&quot;}">Movies &amp; TV</a>
+            
+        </li>
+        <li class="js-nav-menu single-link" data-m="{&quot;cN&quot;:&quot;More_Entertainment_Books_cont&quot;,&quot;cT&quot;:&quot;Container&quot;,&quot;id&quot;:&quot;c6c9c2c1c9c2m1r1a1&quot;,&quot;sN&quot;:6,&quot;aN&quot;:&quot;c9c2c1c9c2m1r1a1&quot;}">
+            <a id="shellmenu_40" class="js-subm-uhf-nav-link" href="https://www.microsoft.com/en-us/store/books" data-m="{&quot;cN&quot;:&quot;GlobalNav_More_Entertainment_Books_nav&quot;,&quot;id&quot;:&quot;n1c6c9c2c1c9c2m1r1a1&quot;,&quot;sN&quot;:1,&quot;aN&quot;:&quot;c6c9c2c1c9c2m1r1a1&quot;}">Books</a>
+            
+        </li>
+            </ul>
+            
+        </li>
+        <li class="f-sub-menu js-nav-menu nested-menu" data-m="{&quot;cT&quot;:&quot;Container&quot;,&quot;id&quot;:&quot;c10c2c1c9c2m1r1a1&quot;,&quot;sN&quot;:10,&quot;aN&quot;:&quot;c2c1c9c2m1r1a1&quot;}">
+
+            <button type="button" role="presentation" f-multi-parent="true" aria-expanded="false" data-m="{&quot;id&quot;:&quot;nn1c10c2c1c9c2m1r1a1&quot;,&quot;sN&quot;:1,&quot;aN&quot;:&quot;c10c2c1c9c2m1r1a1&quot;}">Business</button>
+            <ul aria-hidden="true" role="presentation">
+        <li class="js-nav-menu single-link" data-m="{&quot;cN&quot;:&quot;More_Business_MicrosoftAzure_cont&quot;,&quot;cT&quot;:&quot;Container&quot;,&quot;id&quot;:&quot;c2c10c2c1c9c2m1r1a1&quot;,&quot;sN&quot;:2,&quot;aN&quot;:&quot;c10c2c1c9c2m1r1a1&quot;}">
+            <a id="shellmenu_42" class="js-subm-uhf-nav-link" href="https://azure.microsoft.com/en-us/" data-m="{&quot;cN&quot;:&quot;GlobalNav_More_Business_MicrosoftAzure_nav&quot;,&quot;id&quot;:&quot;n1c2c10c2c1c9c2m1r1a1&quot;,&quot;sN&quot;:1,&quot;aN&quot;:&quot;c2c10c2c1c9c2m1r1a1&quot;}">Microsoft Azure</a>
+            
+        </li>
+        <li class="js-nav-menu single-link" data-m="{&quot;cN&quot;:&quot;More_Business_MicrosoftDynamics365_cont&quot;,&quot;cT&quot;:&quot;Container&quot;,&quot;id&quot;:&quot;c3c10c2c1c9c2m1r1a1&quot;,&quot;sN&quot;:3,&quot;aN&quot;:&quot;c10c2c1c9c2m1r1a1&quot;}">
+            <a id="shellmenu_43" class="js-subm-uhf-nav-link" href="https://www.microsoft.com/en-us/dynamics365/home" data-m="{&quot;cN&quot;:&quot;GlobalNav_More_Business_MicrosoftDynamics365_nav&quot;,&quot;id&quot;:&quot;n1c3c10c2c1c9c2m1r1a1&quot;,&quot;sN&quot;:1,&quot;aN&quot;:&quot;c3c10c2c1c9c2m1r1a1&quot;}">Microsoft Dynamics 365</a>
+            
+        </li>
+        <li class="js-nav-menu single-link" data-m="{&quot;cN&quot;:&quot;Business_Microsoft365_cont&quot;,&quot;cT&quot;:&quot;Container&quot;,&quot;id&quot;:&quot;c4c10c2c1c9c2m1r1a1&quot;,&quot;sN&quot;:4,&quot;aN&quot;:&quot;c10c2c1c9c2m1r1a1&quot;}">
+            <a id="shellmenu_44" class="js-subm-uhf-nav-link" href="https://www.microsoft.com/microsoft-365/?omkt=en-US" data-m="{&quot;cN&quot;:&quot;GlobalNav_Business_Microsoft365_nav&quot;,&quot;id&quot;:&quot;n1c4c10c2c1c9c2m1r1a1&quot;,&quot;sN&quot;:1,&quot;aN&quot;:&quot;c4c10c2c1c9c2m1r1a1&quot;}">Microsoft 365</a>
+            
+        </li>
+        <li class="js-nav-menu single-link" data-m="{&quot;cN&quot;:&quot;More_Business_Enterprise_cont&quot;,&quot;cT&quot;:&quot;Container&quot;,&quot;id&quot;:&quot;c5c10c2c1c9c2m1r1a1&quot;,&quot;sN&quot;:5,&quot;aN&quot;:&quot;c10c2c1c9c2m1r1a1&quot;}">
+            <a id="shellmenu_45" class="js-subm-uhf-nav-link" href="https://www.microsoft.com/en-us/enterprise" data-m="{&quot;cN&quot;:&quot;GlobalNav_More_Business_Enterprise_nav&quot;,&quot;id&quot;:&quot;n1c5c10c2c1c9c2m1r1a1&quot;,&quot;sN&quot;:1,&quot;aN&quot;:&quot;c5c10c2c1c9c2m1r1a1&quot;}">Microsoft Industry</a>
+            
+        </li>
+        <li class="js-nav-menu single-link" data-m="{&quot;cN&quot;:&quot;More_Business_DataPlatform_cont&quot;,&quot;cT&quot;:&quot;Container&quot;,&quot;id&quot;:&quot;c6c10c2c1c9c2m1r1a1&quot;,&quot;sN&quot;:6,&quot;aN&quot;:&quot;c10c2c1c9c2m1r1a1&quot;}">
+            <a id="shellmenu_46" class="js-subm-uhf-nav-link" href="https://www.microsoft.com/en-us/sql-server/" data-m="{&quot;cN&quot;:&quot;GlobalNav_More_Business_DataPlatform_nav&quot;,&quot;id&quot;:&quot;n1c6c10c2c1c9c2m1r1a1&quot;,&quot;sN&quot;:1,&quot;aN&quot;:&quot;c6c10c2c1c9c2m1r1a1&quot;}">Data platform</a>
+            
+        </li>
+        <li class="js-nav-menu single-link" data-m="{&quot;cN&quot;:&quot;More_MicrosoftAdvertising_cont&quot;,&quot;cT&quot;:&quot;Container&quot;,&quot;id&quot;:&quot;c7c10c2c1c9c2m1r1a1&quot;,&quot;sN&quot;:7,&quot;aN&quot;:&quot;c10c2c1c9c2m1r1a1&quot;}">
+            <a id="shellmenu_47" class="js-subm-uhf-nav-link" href="https://go.microsoft.com/fwlink/?linkid=2026638" data-m="{&quot;cN&quot;:&quot;GlobalNav_More_MicrosoftAdvertising_nav&quot;,&quot;id&quot;:&quot;n1c7c10c2c1c9c2m1r1a1&quot;,&quot;sN&quot;:1,&quot;aN&quot;:&quot;c7c10c2c1c9c2m1r1a1&quot;}">Microsoft Advertising</a>
+            
+        </li>
+        <li class="js-nav-menu single-link" data-m="{&quot;cN&quot;:&quot;Business_Licensing_cont&quot;,&quot;cT&quot;:&quot;Container&quot;,&quot;id&quot;:&quot;c8c10c2c1c9c2m1r1a1&quot;,&quot;sN&quot;:8,&quot;aN&quot;:&quot;c10c2c1c9c2m1r1a1&quot;}">
+            <a id="Licensing" class="js-subm-uhf-nav-link" href="https://www.microsoft.com/licensing/default" data-m="{&quot;cN&quot;:&quot;GlobalNav_Business_Licensing_nav&quot;,&quot;id&quot;:&quot;n1c8c10c2c1c9c2m1r1a1&quot;,&quot;sN&quot;:1,&quot;aN&quot;:&quot;c8c10c2c1c9c2m1r1a1&quot;}">Licensing</a>
+            
+        </li>
+            </ul>
+            
+        </li>
+        <li class="f-sub-menu js-nav-menu nested-menu" data-m="{&quot;cT&quot;:&quot;Container&quot;,&quot;id&quot;:&quot;c11c2c1c9c2m1r1a1&quot;,&quot;sN&quot;:11,&quot;aN&quot;:&quot;c2c1c9c2m1r1a1&quot;}">
+
+            <button type="button" role="presentation" f-multi-parent="true" aria-expanded="false" data-m="{&quot;id&quot;:&quot;nn1c11c2c1c9c2m1r1a1&quot;,&quot;sN&quot;:1,&quot;aN&quot;:&quot;c11c2c1c9c2m1r1a1&quot;}">Developer &amp; IT  </button>
+            <ul aria-hidden="true" role="presentation">
+        <li class="js-nav-menu single-link" data-m="{&quot;cN&quot;:&quot;More_DeveloperAndIT_.Net_cont&quot;,&quot;cT&quot;:&quot;Container&quot;,&quot;id&quot;:&quot;c2c11c2c1c9c2m1r1a1&quot;,&quot;sN&quot;:2,&quot;aN&quot;:&quot;c11c2c1c9c2m1r1a1&quot;}">
+            <a id="shellmenu_50" class="js-subm-uhf-nav-link" href="https://www.microsoft.com/net/" data-m="{&quot;cN&quot;:&quot;GlobalNav_More_DeveloperAndIT_.Net_nav&quot;,&quot;id&quot;:&quot;n1c2c11c2c1c9c2m1r1a1&quot;,&quot;sN&quot;:1,&quot;aN&quot;:&quot;c2c11c2c1c9c2m1r1a1&quot;}">.NET</a>
+            
+        </li>
+        <li class="js-nav-menu single-link" data-m="{&quot;cN&quot;:&quot;More_DevelopersAndIT_VisualStudio_cont&quot;,&quot;cT&quot;:&quot;Container&quot;,&quot;id&quot;:&quot;c3c11c2c1c9c2m1r1a1&quot;,&quot;sN&quot;:3,&quot;aN&quot;:&quot;c11c2c1c9c2m1r1a1&quot;}">
+            <a id="shellmenu_51" class="js-subm-uhf-nav-link" href="https://visualstudio.microsoft.com/" data-m="{&quot;cN&quot;:&quot;GlobalNav_More_DevelopersAndIT_VisualStudio_nav&quot;,&quot;id&quot;:&quot;n1c3c11c2c1c9c2m1r1a1&quot;,&quot;sN&quot;:1,&quot;aN&quot;:&quot;c3c11c2c1c9c2m1r1a1&quot;}">Visual Studio</a>
+            
+        </li>
+        <li class="js-nav-menu single-link" data-m="{&quot;cN&quot;:&quot;More_ProductsandServices_WindowsServer_cont&quot;,&quot;cT&quot;:&quot;Container&quot;,&quot;id&quot;:&quot;c4c11c2c1c9c2m1r1a1&quot;,&quot;sN&quot;:4,&quot;aN&quot;:&quot;c11c2c1c9c2m1r1a1&quot;}">
+            <a id="shellmenu_52" class="js-subm-uhf-nav-link" href="https://www.microsoft.com/cloud-platform/windows-server" data-m="{&quot;cN&quot;:&quot;GlobalNav_More_ProductsandServices_WindowsServer_nav&quot;,&quot;id&quot;:&quot;n1c4c11c2c1c9c2m1r1a1&quot;,&quot;sN&quot;:1,&quot;aN&quot;:&quot;c4c11c2c1c9c2m1r1a1&quot;}">Windows Server</a>
+            
+        </li>
+        <li class="js-nav-menu single-link" data-m="{&quot;cN&quot;:&quot;More_DeveloperAndIT_WindowsDevCenter_cont&quot;,&quot;cT&quot;:&quot;Container&quot;,&quot;id&quot;:&quot;c5c11c2c1c9c2m1r1a1&quot;,&quot;sN&quot;:5,&quot;aN&quot;:&quot;c11c2c1c9c2m1r1a1&quot;}">
+            <a id="shellmenu_53" class="js-subm-uhf-nav-link" href="https://developer.microsoft.com/en-us/windows" data-m="{&quot;cN&quot;:&quot;GlobalNav_More_DeveloperAndIT_WindowsDevCenter_nav&quot;,&quot;id&quot;:&quot;n1c5c11c2c1c9c2m1r1a1&quot;,&quot;sN&quot;:1,&quot;aN&quot;:&quot;c5c11c2c1c9c2m1r1a1&quot;}">Windows Dev Center</a>
+            
+        </li>
+        <li class="js-nav-menu single-link" data-m="{&quot;cN&quot;:&quot;More_DeveloperAndIT_Docs.microsoft.com_cont&quot;,&quot;cT&quot;:&quot;Container&quot;,&quot;id&quot;:&quot;c6c11c2c1c9c2m1r1a1&quot;,&quot;sN&quot;:6,&quot;aN&quot;:&quot;c11c2c1c9c2m1r1a1&quot;}">
+            <a id="shellmenu_54" class="js-subm-uhf-nav-link" href="https://docs.microsoft.com/en-us/" data-m="{&quot;cN&quot;:&quot;GlobalNav_More_DeveloperAndIT_Docs.microsoft.com_nav&quot;,&quot;id&quot;:&quot;n1c6c11c2c1c9c2m1r1a1&quot;,&quot;sN&quot;:1,&quot;aN&quot;:&quot;c6c11c2c1c9c2m1r1a1&quot;}">Docs</a>
+            
+        </li>
+            </ul>
+            
+        </li>
+        <li class="f-sub-menu js-nav-menu nested-menu" data-m="{&quot;cT&quot;:&quot;Container&quot;,&quot;id&quot;:&quot;c12c2c1c9c2m1r1a1&quot;,&quot;sN&quot;:12,&quot;aN&quot;:&quot;c2c1c9c2m1r1a1&quot;}">
+
+            <button type="button" role="presentation" f-multi-parent="true" aria-expanded="false" data-m="{&quot;id&quot;:&quot;nn1c12c2c1c9c2m1r1a1&quot;,&quot;sN&quot;:1,&quot;aN&quot;:&quot;c12c2c1c9c2m1r1a1&quot;}">Other</button>
+            <ul aria-hidden="true" role="presentation">
+        <li class="js-nav-menu single-link" data-m="{&quot;cN&quot;:&quot;Other_MicrosoftStore_cont&quot;,&quot;cT&quot;:&quot;Container&quot;,&quot;id&quot;:&quot;c2c12c2c1c9c2m1r1a1&quot;,&quot;sN&quot;:2,&quot;aN&quot;:&quot;c12c2c1c9c2m1r1a1&quot;}">
+            <a id="shellmenu_56" class="js-subm-uhf-nav-link" href="https://www.microsoft.com/en-us/store/b/home" data-m="{&quot;cN&quot;:&quot;GlobalNav_Other_MicrosoftStore_nav&quot;,&quot;id&quot;:&quot;n1c2c12c2c1c9c2m1r1a1&quot;,&quot;sN&quot;:1,&quot;aN&quot;:&quot;c2c12c2c1c9c2m1r1a1&quot;}">Microsoft Store</a>
+            
+        </li>
+        <li class="js-nav-menu single-link" data-m="{&quot;cN&quot;:&quot;More_Other_Microsoft Rewards_cont&quot;,&quot;cT&quot;:&quot;Container&quot;,&quot;id&quot;:&quot;c3c12c2c1c9c2m1r1a1&quot;,&quot;sN&quot;:3,&quot;aN&quot;:&quot;c12c2c1c9c2m1r1a1&quot;}">
+            <a id="shellmenu_57" class="js-subm-uhf-nav-link" href="https://www.microsoft.com/rewards" data-m="{&quot;cN&quot;:&quot;GlobalNav_More_Other_Microsoft Rewards_nav&quot;,&quot;id&quot;:&quot;n1c3c12c2c1c9c2m1r1a1&quot;,&quot;sN&quot;:1,&quot;aN&quot;:&quot;c3c12c2c1c9c2m1r1a1&quot;}">Microsoft Rewards </a>
+            
+        </li>
+        <li class="js-nav-menu single-link" data-m="{&quot;cN&quot;:&quot;Products_SoftwareAndServices_FreeDownloadsAndSecurity_cont&quot;,&quot;cT&quot;:&quot;Container&quot;,&quot;id&quot;:&quot;c4c12c2c1c9c2m1r1a1&quot;,&quot;sN&quot;:4,&quot;aN&quot;:&quot;c12c2c1c9c2m1r1a1&quot;}">
+            <a id="shellmenu_58" class="js-subm-uhf-nav-link" href="https://www.microsoft.com/en-us/download/default.aspx" data-m="{&quot;cN&quot;:&quot;GlobalNav_Products_SoftwareAndServices_FreeDownloadsAndSecurity_nav&quot;,&quot;id&quot;:&quot;n1c4c12c2c1c9c2m1r1a1&quot;,&quot;sN&quot;:1,&quot;aN&quot;:&quot;c4c12c2c1c9c2m1r1a1&quot;}">Free downloads &amp; security</a>
+            
+        </li>
+        <li class="js-nav-menu single-link" data-m="{&quot;cN&quot;:&quot;Products_ForStudentsAndEducators_Education_cont&quot;,&quot;cT&quot;:&quot;Container&quot;,&quot;id&quot;:&quot;c5c12c2c1c9c2m1r1a1&quot;,&quot;sN&quot;:5,&quot;aN&quot;:&quot;c12c2c1c9c2m1r1a1&quot;}">
+            <a id="shellmenu_59" class="js-subm-uhf-nav-link" href="https://www.microsoft.com/en-us/education?icid=CNavMSCOML0_Studentsandeducation" data-m="{&quot;cN&quot;:&quot;GlobalNav_Products_ForStudentsAndEducators_Education_nav&quot;,&quot;id&quot;:&quot;n1c5c12c2c1c9c2m1r1a1&quot;,&quot;sN&quot;:1,&quot;aN&quot;:&quot;c5c12c2c1c9c2m1r1a1&quot;}">Education</a>
+            
+        </li>
+        <li class="js-nav-menu single-link" data-m="{&quot;cN&quot;:&quot;More_Other_Store_Locations_cont&quot;,&quot;cT&quot;:&quot;Container&quot;,&quot;id&quot;:&quot;c6c12c2c1c9c2m1r1a1&quot;,&quot;sN&quot;:6,&quot;aN&quot;:&quot;c12c2c1c9c2m1r1a1&quot;}">
+            <a id="shellmenu_60" class="js-subm-uhf-nav-link" href="https://www.microsoft.com/en-us/store/locations/find-a-store?icid=TopNavStoreLocations" data-m="{&quot;cN&quot;:&quot;GlobalNav_More_Other_Store_Locations_nav&quot;,&quot;id&quot;:&quot;n1c6c12c2c1c9c2m1r1a1&quot;,&quot;sN&quot;:1,&quot;aN&quot;:&quot;c6c12c2c1c9c2m1r1a1&quot;}">Store locations</a>
+            
+        </li>
+        <li class="js-nav-menu single-link" data-m="{&quot;cN&quot;:&quot;Store_More_GiftCards_cont&quot;,&quot;cT&quot;:&quot;Container&quot;,&quot;id&quot;:&quot;c7c12c2c1c9c2m1r1a1&quot;,&quot;sN&quot;:7,&quot;aN&quot;:&quot;c12c2c1c9c2m1r1a1&quot;}">
+            <a id="shellmenu_61" class="js-subm-uhf-nav-link" href="https://www.microsoft.com/en-us/store/b/gift-cards" data-m="{&quot;cN&quot;:&quot;GlobalNav_Store_More_GiftCards_nav&quot;,&quot;id&quot;:&quot;n1c7c12c2c1c9c2m1r1a1&quot;,&quot;sN&quot;:1,&quot;aN&quot;:&quot;c7c12c2c1c9c2m1r1a1&quot;}">Gift cards</a>
+            
+        </li>
+            </ul>
+            
+        </li>
+                                                            <li class="f-multi-column-info">
+                                    <a data-m="{&quot;id&quot;:&quot;n13c2c1c9c2m1r1a1&quot;,&quot;sN&quot;:13,&quot;aN&quot;:&quot;c2c1c9c2m1r1a1&quot;}" href="https://www.microsoft.com/en-us/sitemap.aspx" aria-label="" class="c-glyph">View Sitemap</a>
+                                </li>
+                            
+                        </ul>
+                    </div>
+                </li>
+            </ul>
+        </nav>
+</div>
+		<form class="c-search" autocomplete="off" id="searchForm" name="searchForm" role="search" action="https://docs.microsoft.com/en-us/search/index" method="GET" title="Search" data-seautosuggest="{&quot;queryParams&quot;:{&quot;market&quot;:&quot;en-us&quot;,&quot;clientId&quot;:&quot;7F27B536-CF6B-4C65-8638-A0F8CBDFCA65&quot;,&quot;sources&quot;:&quot;Microsoft-Terms,Iris-Products,DCatAll-Products&quot;,&quot;filter&quot;:&quot;+ClientType:StoreWeb&quot;,&quot;counts&quot;:&quot;5,1,5&quot;},&quot;familyNames&quot;:{&quot;Apps&quot;:&quot;App&quot;,&quot;Books&quot;:&quot;Book&quot;,&quot;Bundles&quot;:&quot;Bundle&quot;,&quot;Devices&quot;:&quot;Device&quot;,&quot;Fees&quot;:&quot;Fee&quot;,&quot;Games&quot;:&quot;Game&quot;,&quot;MusicAlbums&quot;:&quot;Album&quot;,&quot;MusicTracks&quot;:&quot;Song&quot;,&quot;MusicVideos&quot;:&quot;Video&quot;,&quot;MusicArtists&quot;:&quot;Artist&quot;,&quot;OperatingSystem&quot;:&quot;Operating System&quot;,&quot;Software&quot;:&quot;Software&quot;,&quot;Movies&quot;:&quot;Movie&quot;,&quot;TV&quot;:&quot;TV&quot;,&quot;CSV&quot;:&quot;Gift Card&quot;,&quot;VideoActor&quot;:&quot;Actor&quot;}}" data-seautosuggestapi="https://www.microsoft.com/services/api/v3/suggest" data-m="{&quot;cN&quot;:&quot;GlobalNav_Search_cont&quot;,&quot;cT&quot;:&quot;Container&quot;,&quot;id&quot;:&quot;c3c1c9c2m1r1a1&quot;,&quot;sN&quot;:3,&quot;aN&quot;:&quot;c1c9c2m1r1a1&quot;}" aria-expanded="false">
+			<input id="cli_shellHeaderSearchInput" aria-label="search expanded" aria-autocomplete="list" aria-controls="universal-header-search-auto-suggest-transparent" aria-owns="universal-header-search-auto-suggest-ul" type="search" name="search" placeholder="Search" data-m="{&quot;cN&quot;:&quot;SearchBox_nav&quot;,&quot;id&quot;:&quot;n1c3c1c9c2m1r1a1&quot;,&quot;sN&quot;:1,&quot;aN&quot;:&quot;c3c1c9c2m1r1a1&quot;}"><div class="x-screen-reader" aria-live="assertive"></div>
+			<button id="search" aria-label="Search" class="c-glyph" data-m="{&quot;cN&quot;:&quot;Search_nav&quot;,&quot;id&quot;:&quot;n2c3c1c9c2m1r1a1&quot;,&quot;sN&quot;:2,&quot;aN&quot;:&quot;c3c1c9c2m1r1a1&quot;}" data-bi-dnt="true" data-bi-mto="true" aria-expanded="false">
+				<span role="presentation">Search</span>
+			</button>
+			<div class="m-auto-suggest" id="universal-header-search-auto-suggest-transparent" role="group">
+				<ul class="c-menu" id="universal-header-search-auto-suggest-ul" aria-hidden="true" data-bi-dnt="true" data-bi-mto="true" data-js-auto-suggest-position="default" role="listbox" data-tel="jsll" data-m="{&quot;cN&quot;:&quot;search suggestions_cont&quot;,&quot;cT&quot;:&quot;Container&quot;,&quot;id&quot;:&quot;c3c3c1c9c2m1r1a1&quot;,&quot;sN&quot;:3,&quot;aN&quot;:&quot;c3c1c9c2m1r1a1&quot;}"></ul>
+			</div>
+			
+		<input name="scope" value="SharePoint Server" hidden=""><a class="search-scope" href="#" role="button" title="Search filter is &quot;SharePoint Server&quot;. Tap to remove." style=""><span class="search-scope-text">SharePoint Server</span> <span class="docon docon-navigate-close"></span></a></form>
+		<button data-m="{&quot;cN&quot;:&quot;cancel-search&quot;,&quot;pid&quot;:&quot;Cancel Search&quot;,&quot;id&quot;:&quot;nn4c1c9c2m1r1a1&quot;,&quot;sN&quot;:4,&quot;aN&quot;:&quot;c1c9c2m1r1a1&quot;}" id="cancel-search" class="cancel-search" aria-label="Cancel Search">
+			<span>Cancel</span>
+		</button>
+				
+			</div>
+		</div>
+		
+		
+	</div>
+	
+</header>
+
+
+
+
+    </div>
+        </div>
+
+    </div>
+</div>
+	<div class="content-header uhf-container has-padding has-default-focus" data-bi-name="content-header">
+		<nav class="has-padding-none-mobile" data-bi-name="breadcrumb" itemscope="" itemtype="http://schema.org/BreadcrumbList" role="navigation" aria-label="Breadcrumb">
+		<ul id="page-breadcrumbs" class="breadcrumbs"><!---->
+		<!---->
+		<li itemprop="itemListElement" itemscope="" itemtype="http://schema.org/ListItem">
+			
+			<a itemprop="item" href="https://docs.microsoft.com/en-us/sharepoint/">
+				Share<wbr>Point
+			</a>
+		</li><!---->
+		<li itemprop="itemListElement" itemscope="" itemtype="http://schema.org/ListItem">
+			
+			<a itemprop="item" href="https://docs.microsoft.com/en-us/sharepoint/sharepoint-server">
+				Share<wbr>Point Server
+			</a>
+		</li><!---->
+		<li itemprop="itemListElement" itemscope="" itemtype="http://schema.org/ListItem">
+			
+			<a itemprop="item" href="https://docs.microsoft.com/en-us/sharepoint/search/search">
+				Search
+			</a>
+		</li><!---->
+		<li itemprop="itemListElement" itemscope="" itemtype="http://schema.org/ListItem">
+			
+			<a itemprop="item" href="https://docs.microsoft.com/en-us/sharepoint/search/configure-search">
+				Configure search
+			</a>
+		</li><!---->
+		<li itemprop="itemListElement" itemscope="" itemtype="http://schema.org/ListItem">
+			
+			<span itemprop="name">
+				Deploy people search
+			</span>
+		</li><!---->
+	<!----></ul>
+		</nav>
+		<div class="content-header-controls">
+			<button type="button" class="contents-button button" data-bi-name="contents-expand" aria-controls="sidebar" aria-haspopup="true">
+				<span class="icon"><span class="docon docon-menu" aria-hidden="true"></span></span>
+				<span>Contents</span>
+			</button>
+		</div>
+		<div class="content-header-controls exit-focus">
+			<button type="button" class="ap-collapse-behavior ap-expanded button" data-bi-name="ap-collapse" aria-controls="action-panel">
+				<span class="icon"><span class="docon docon-exit-mode" aria-hidden="true"></span></span>
+				<span>Exit focus mode</span>
+			</button>
+			
+		</div>
+		<div class="action-bar">
+			<ul class="action-list">
+						<li>
+							<a href="#feedback" class="button is-text is-small is-icon-only-touch" data-bi-name="comments">
+								<span class="icon">
+									<span class="docon docon-comment-lines" aria-hidden="true"></span>
+								</span>
+								<span class="action-item-text">Feedback</span>
+							</a>
+						</li>
+							<li id="contenteditbtn">
+									<a href="https://github.com/MicrosoftDocs/OfficeDocs-SharePoint/blob/live/SharePoint/SharePointServer/search/deploy-people-search.md" class="button is-text is-icon-only-touch is-small" title="Edit This Document" data-bi-name="edit" data-original_content_git_url="https://github.com/MicrosoftDocs/OfficeDocs-SharePoint-pr/blob/live/SharePoint/SharePointServer/search/deploy-people-search.md" data-original_content_git_url_template="" data-pr_repo="" data-pr_branch="">
+									<span class="icon">
+										<span class="docon docon-edit-outline" aria-hidden="true"></span>
+									</span>
+									<span class="action-item-text">Edit</span>
+								</a>
+							</li>
+				<li>
+					<div class="sharing dropdown has-caret" auto-align="">
+						<button class="dropdown-trigger button is-text is-small is-icon-only-touch" aria-controls="sharing-menu" aria-expanded="false" title="Share This Document" data-bi-name="share">
+							<span class="icon" aria-hidden="true">
+								<span class="docon docon-sharing"></span>
+							</span>
+							<span class="action-item-text">Share</span>
+						</button>
+						<div class="dropdown-menu" id="sharing-menu" role="menu">
+							<ul data-bi-name="share-links">
+								<li>
+									<a role="menuitem" class="share-twitter" data-bi-name="twitter" href="https://twitter.com/intent/tweet?original_referer=https%3A%2F%2Fdocs.microsoft.com%2Fen-us%2Fsharepoint%2Fsearch%2Fdeploy-people-search%3FWT.mc_id%3Dtwitter&amp;text=Deploy%20people%20search%20in%20SharePoint%20Server%20%7C%20Microsoft%20Docs&amp;tw_p=tweetbutton&amp;url=https%3A%2F%2Fdocs.microsoft.com%2Fen-us%2Fsharepoint%2Fsearch%2Fdeploy-people-search%3FWT.mc_id%3Dtwitter">
+										<span class="icon">
+											<span class="docon docon-brand-twitter" aria-hidden="true"></span>
+										</span>
+										<span>Twitter</span>
+									</a>
+								</li>
+								<li>
+									<a role="menuitem" class="share-linkedin" data-bi-name="linkedin" href="https://www.linkedin.com/cws/share?url=https%3A%2F%2Fdocs.microsoft.com%2Fen-us%2Fsharepoint%2Fsearch%2Fdeploy-people-search%3FWT.mc_id%3Dlinkedin">
+										<span class="icon">
+											<span class="docon docon-brand-linkedin" aria-hidden="true"></span>
+										</span>
+										<span>LinkedIn</span>
+									</a>
+								</li>
+								<li>
+									<a role="menuitem" class="share-facebook" data-bi-name="facebook" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fdocs.microsoft.com%2Fen-us%2Fsharepoint%2Fsearch%2Fdeploy-people-search%3FWT.mc_id%3Dfacebook">
+										<span class="icon">
+											<span class="docon docon-brand-facebook" aria-hidden="true"></span>
+										</span>
+										<span>Facebook</span>
+									</a>
+								</li>
+								<li>
+									<a role="menuitem" class="share-email" data-bi-name="email" href="mailto:?subject=%5BShared%20Article%5D%20Deploy%20people%20search%20in%20SharePoint%20Server%20%7C%20Microsoft%20Docs&amp;body=Deploy%20people%20search%20in%20SharePoint%20Server%20%7C%20Microsoft%20Docs%0A%0Ahttps%3A%2F%2Fdocs.microsoft.com%2Fen-us%2Fsharepoint%2Fsearch%2Fdeploy-people-search%3FWT.mc_id%3Demail">
+										<span class="icon">
+											<span class="docon docon-mail-message-fill" aria-hidden="true"></span>
+										</span>
+										<span>Email</span>
+									</a>
+								</li>
+							</ul>
+						</div>
+					</div>
+				</li>
+				<li class="is-unstyle-action-list-item">
+<div class="dropdown has-caret" auto-align="">
+	<button class="dropdown-trigger button is-text is-small is-icon-only-touch" aria-controls="theme-menu" aria-expanded="false" title="Theme" data-bi-name="theme">
+		<span class="icon">
+			<span class="docon docon-sun" aria-hidden="true"></span>
+		</span>
+		<span class="action-item-text">Theme</span>
+	</button>
+	<div class="dropdown-menu" id="theme-menu" role="menu">
+		<div class="theme-selector has-padding-small">
+			<div class="theme is-block">
+				<button class="button is-text is-small theme-control is-fullwidth has-flex-justify-content-start is-selected" data-theme-to="light" role="menuitem" aria-selected="true">
+					<span class="theme-light has-margin-right-small">
+						<span class="theme-selector-icon css-variable-support has-border is-inline-block has-body-background" aria-hidden="true">
+							<svg class="svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 22 14">
+								<rect width="22" height="14" class="has-fill-body-background"></rect>
+								<rect x="5" y="5" width="12" height="4" class="has-fill-secondary"></rect>
+								<rect x="5" y="2" width="2" height="1" class="has-fill-secondary"></rect>
+								<rect x="8" y="2" width="2" height="1" class="has-fill-secondary"></rect>
+								<rect x="11" y="2" width="3" height="1" class="has-fill-secondary"></rect>
+								<rect x="1" y="1" width="2" height="2" class="has-fill-secondary"></rect>
+								<rect x="5" y="10" width="7" height="2" rx="0.3" class="has-fill-primary"></rect>
+								<rect x="19" y="1" width="2" height="2" rx="1" class="has-fill-secondary"></rect>
+							</svg>
+						</span>
+					</span>
+					<span>
+Light					</span>
+				</button>
+			</div>
+			<div class="theme is-block">
+				<button class="button is-text is-small theme-control is-fullwidth has-flex-justify-content-start" data-theme-to="dark" role="menuitem" aria-selected="false">
+					<span class="theme-dark has-margin-right-small">
+						<span class="has-border theme-selector-icon css-variable-support is-inline-block has-body-background" aria-hidden="true">
+							<svg class="svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 22 14">
+								<rect width="22" height="14" class="has-fill-body-background"></rect>
+								<rect x="5" y="5" width="12" height="4" class="has-fill-secondary"></rect>
+								<rect x="5" y="2" width="2" height="1" class="has-fill-secondary"></rect>
+								<rect x="8" y="2" width="2" height="1" class="has-fill-secondary"></rect>
+								<rect x="11" y="2" width="3" height="1" class="has-fill-secondary"></rect>
+								<rect x="1" y="1" width="2" height="2" class="has-fill-secondary"></rect>
+								<rect x="5" y="10" width="7" height="2" rx="0.3" class="has-fill-primary"></rect>
+								<rect x="19" y="1" width="2" height="2" rx="1" class="has-fill-secondary"></rect>
+							</svg>
+						</span>
+					</span>
+					<span>
+Dark					</span>
+				</button>
+			</div>
+			<div class="theme is-block">
+				<button class="button is-text is-small theme-control is-fullwidth has-flex-justify-content-start" data-theme-to="high-contrast" role="menuitem" aria-selected="false">
+					<span class="theme-high-contrast has-margin-right-small">
+						<span class="has-border theme-selector-icon css-variable-support is-inline-block has-body-background" aria-hidden="true">
+							<svg class="svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 22 14">
+								<rect width="22" height="14" class="has-fill-body-background"></rect>
+								<rect x="5" y="5" width="12" height="4" class="has-fill-secondary"></rect>
+								<rect x="5" y="2" width="2" height="1" class="has-fill-secondary"></rect>
+								<rect x="8" y="2" width="2" height="1" class="has-fill-secondary"></rect>
+								<rect x="11" y="2" width="3" height="1" class="has-fill-secondary"></rect>
+								<rect x="1" y="1" width="2" height="2" class="has-fill-secondary"></rect>
+								<rect x="5" y="10" width="7" height="2" rx="0.3" class="has-fill-primary"></rect>
+								<rect x="19" y="1" width="2" height="2" rx="1" class="has-fill-secondary"></rect>
+							</svg>
+						</span>
+					</span>
+					<span>
+High contrast					</span>
+				</button>
+			</div>
+		</div>
+	</div>
+</div>				</li>
+				<li class="is-unstyled-action-list-item">
+					<a class="docs-sign-in auth-status-determined not-authenticated button is-text has-text-primary is-small" href="#">Sign in</a>
+					<div class="dropdown has-caret auth-status-determined authenticated" auto-align="">
+						<button class="dropdown-trigger button is-text is-small is-icon-only-touch has-inner-focus" aria-label="Your Account" aria-haspopup="true" aria-controls="user-menu" aria-expanded="false">
+							<span class="icon" aria-hidden="true">
+								<span class="image">
+									<img class="has-body-background-medium is-rounded" data-profile-property="avatarUrl">
+								</span>
+							</span>
+							<span class="is-truncated" data-profile-property="userName"></span>
+						</button>
+						<div class="dropdown-menu box" id="user-menu" role="menu">
+							<div class="media is-user-dir">
+								<div class="media-left">
+									<span class="image is-64x64" aria-hidden="true">
+										<img class="has-body-background-medium is-rounded" data-profile-property="avatarUrl">
+									</span>
+								</div>
+								<div class="media-content">
+									<p class="title has-margin-top-small has-margin-bottom-small">
+										<span class="is-truncated" style="max-width: 200px" data-profile-property="userName"></span>
+									</p>
+									<p class="subtitle">
+										<span class="is-truncated" style="max-width: 200px" data-profile-property="upn"></span>
+									</p>
+								</div>
+							</div>
+							<ul class="is-unstyled has-margin-none">
+								<li><a href="https://docs.microsoft.com/profile" data-profile-property="profileUrl">Profile</a></li>
+								<li><a class="docs-sign-out" href="#">Sign out</a></li>
+							</ul>
+						</div>
+					</div>
+				</li>
+			</ul>
+			<button type="button" class="contents-button" aria-label="Contents" data-bi-name="contents-expand-">
+				<span class="docon docon-editor-list-bullet"></span><span>Contents</span>
+			</button>
+		</div>
+	</div>
+
+		<div id="banner-holder" class="has-default-focus has-overflow-hidden">
+		</div>
+
+	<div id="disclaimer-holder" class="has-overflow-hidden has-default-focus"></div>
+	</div>
+
+	<div class="mainContainer uhf-container  has-top-padding  has-default-focus" data-bi-name="body">
+
+		<div class="columns has-large-gaps ">
+
+			<div id="left-container" class="left-container is-hidden-mobile column is-one-third-tablet is-one-quarter-desktop">
+				<nav id="affixed-left-container" class="is-fixed is-flex is-flex-column" role="navigation" aria-label="Primary" style="width: 267.1px; top: 119.5px; bottom: 24px;" data-bi-name="left toc"><form action="javascript:" role="search" aria-label="Search" class="is-full-width has-margin-bottom-small"><label class="visually-hidden" for="ax-0">Search</label><div class="autocomplete is-block" data-bi-name="autocomplete"><!---->
+		<input type="text" role="combobox" maxlength="100" aria-autocomplete="list" autocapitalize="off" autocomplete="off" autocorrect="off" spellcheck="false" id="ax-0" class="autocomplete-input input is-small is-full-width" aria-expanded="false" aria-owns="ax-1-listbox" aria-activedescendant="" placeholder="Filter by title">
+
+		<span class="autocomplete-loader loader has-text-primary" aria-hidden="true" hidden=""></span>
+
+		<ul class="autocomplete-suggestions is-vertically-scrollable" role="listbox" id="ax-1-listbox" hidden="">
+			
+		</ul><!----></div></form><ul class="tree is-vertically-scrollable has-flex-grow has-flex-shrink" role="tree" aria-label="Table of contents" data-bi-name="tree"><li role="none"><a class="tree-item is-leaf" role="treeitem" tabindex="-1" data-bi-name="tree-leaf" href="https://docs.microsoft.com/en-us/sharepoint/sharepoint-server">Share<wbr>Point Server</a></li><li role="none"><a class="tree-item is-leaf" role="treeitem" tabindex="-1" data-bi-name="tree-leaf" href="https://docs.microsoft.com/en-us/OfficeUpdates/sharepoint-updates?toc=/sharepoint/spstoc/toc.json">Share<wbr>Point Updates</a></li><li role="none"><a class="tree-item is-leaf" role="treeitem" tabindex="-1" data-bi-name="tree-leaf" href="https://docs.microsoft.com/en-us/sharepoint/accessibility-guidelines">Accessibility guidelines</a></li><li class="tree-item" role="treeitem" tabindex="-1" aria-expanded="false"><span class="tree-expander" data-bi-name="tree-expander"><span class="tree-expander-indicator docon docon-chevron-right-light" aria-hidden="true"></span>What's new</span></li><li role="none"><a class="tree-item is-leaf" role="treeitem" tabindex="-1" data-bi-name="tree-leaf" href="https://docs.microsoft.com/en-us/sharepoint/getting-started">Getting started</a></li><li class="tree-item" role="treeitem" tabindex="-1" aria-expanded="false"><span class="tree-expander" data-bi-name="tree-expander"><span class="tree-expander-indicator docon docon-chevron-right-light" aria-hidden="true"></span>Security for Share<wbr>Point Server</span></li><li class="tree-item" role="treeitem" tabindex="-1" aria-expanded="false"><span class="tree-expander" data-bi-name="tree-expander"><span class="tree-expander-indicator docon docon-chevron-right-light" aria-hidden="true"></span>Install</span></li><li class="tree-item" role="treeitem" tabindex="-1" aria-expanded="false"><span class="tree-expander" data-bi-name="tree-expander"><span class="tree-expander-indicator docon docon-chevron-right-light" aria-hidden="true"></span>Upgrade and Update</span></li><li class="tree-item" role="treeitem" tabindex="-1" aria-expanded="false"><span class="tree-expander" data-bi-name="tree-expander"><span class="tree-expander-indicator docon docon-chevron-right-light" aria-hidden="true"></span>Sites</span></li><li class="tree-item is-expanded" role="treeitem" tabindex="-1" aria-expanded="true"><span class="tree-expander" data-bi-name="tree-expander"><span class="tree-expander-indicator docon docon-chevron-right-light" aria-hidden="true"></span>Search</span><ul class="tree-group" role="group"><li role="none"><a class="tree-item is-leaf" role="treeitem" tabindex="-1" data-bi-name="tree-leaf" href="https://docs.microsoft.com/en-us/sharepoint/search/search">Search</a></li><li class="tree-item" role="treeitem" tabindex="-1" aria-expanded="false"><span class="tree-expander" data-bi-name="tree-expander"><span class="tree-expander-indicator docon docon-chevron-right-light" aria-hidden="true"></span>Search planning</span></li><li class="tree-item is-expanded" role="treeitem" tabindex="-1" aria-expanded="true"><span class="tree-expander" data-bi-name="tree-expander"><span class="tree-expander-indicator docon docon-chevron-right-light" aria-hidden="true"></span>Configure search</span><ul class="tree-group" role="group"><li role="none"><a class="tree-item is-leaf" role="treeitem" tabindex="-1" data-bi-name="tree-leaf" href="https://docs.microsoft.com/en-us/sharepoint/search/configure-search">Configure search</a></li><li role="none"><a class="tree-item is-leaf" role="treeitem" tabindex="-1" data-bi-name="tree-leaf" href="https://docs.microsoft.com/en-us/sharepoint/search/create-and-configure-a-search-service-application">Create and configure a Search service application</a></li><li role="none"><a class="tree-item is-leaf" role="treeitem" tabindex="-1" data-bi-name="tree-leaf" href="https://docs.microsoft.com/en-us/sharepoint/search/create-a-search-center-site">Create a Search Center site</a></li><li role="none"><a class="tree-item is-leaf is-selected" role="treeitem" tabindex="0" data-bi-name="tree-leaf" href="https://docs.microsoft.com/en-us/sharepoint/search/deploy-people-search">Deploy people search</a></li></ul></li><li class="tree-item" role="treeitem" tabindex="-1" aria-expanded="false"><span class="tree-expander" data-bi-name="tree-expander"><span class="tree-expander-indicator docon docon-chevron-right-light" aria-hidden="true"></span>Search administration</span></li><li class="tree-item" role="treeitem" tabindex="-1" aria-expanded="false"><span class="tree-expander" data-bi-name="tree-expander"><span class="tree-expander-indicator docon docon-chevron-right-light" aria-hidden="true"></span>Search center scenarios</span></li></ul></li><li class="tree-item" role="treeitem" tabindex="-1" aria-expanded="false"><span class="tree-expander" data-bi-name="tree-expander"><span class="tree-expander-indicator docon docon-chevron-right-light" aria-hidden="true"></span>Hybrid</span></li><li class="tree-item" role="treeitem" tabindex="-1" aria-expanded="false"><span class="tree-expander" data-bi-name="tree-expander"><span class="tree-expander-indicator docon docon-chevron-right-light" aria-hidden="true"></span>Governance</span></li><li class="tree-item" role="treeitem" tabindex="-1" aria-expanded="false"><span class="tree-expander" data-bi-name="tree-expander"><span class="tree-expander-indicator docon docon-chevron-right-light" aria-hidden="true"></span>Administration</span></li><li class="tree-item" role="treeitem" tabindex="-1" aria-expanded="false"><span class="tree-expander" data-bi-name="tree-expander"><span class="tree-expander-indicator docon docon-chevron-right-light" aria-hidden="true"></span>Technical reference</span></li><li role="none"><a class="tree-item is-leaf" role="treeitem" tabindex="-1" data-bi-name="tree-leaf" href="https://docs.microsoft.com/en-us/sharepoint/sharepoint-powershell">Share<wbr>Point Power<wbr>Shell</a></li><li class="tree-item" role="treeitem" tabindex="-1" aria-expanded="false"><span class="tree-expander" data-bi-name="tree-expander"><span class="tree-expander-indicator docon docon-chevron-right-light" aria-hidden="true"></span>Product Servicing Policy</span></li></ul><a class="button is-small is-text has-flex-justify-content-start has-inner-focus has-margin-top-small has-border-top has-border-bottom" href="https://docs.microsoft.com/en-us/SharePoint/opbuildpdf/spstoc/toc.pdf?branch=live" data-bi-name="downloadPdf"><!---->
+		<span class="icon is-size-8 has-text-subtle">
+			<span aria-hidden="true" class="docon docon-arrow-down"></span>
+		</span>
+		<span><!---->Download PDF<!----></span><!----></a></nav>
+			</div>
+
+			<section class="primary-holder column is-two-thirds-tablet is-three-quarters-desktop">
+				<div class="columns has-large-gaps ">
+
+
+				<div id="main-column" class="column  is-full is-four-fifths-desktop ">
+
+					<main id="main" role="main" class="content " data-bi-name="content" dir="ltr" lang="en-us">
+
+
+
+
+						<h1 id="deploy-people-search-in-sharepoint-server" sourcefile="SharePointServer/search/deploy-people-search.md" sourcestartlinenumber="17">Deploy people search in SharePoint Server</h1>
+
+						<ul class="metadata page-metadata" data-bi-name="page info" dir="ltr" lang="en-us">
+							<li class="displayDate">
+								<time role="presentation" datetime="2018-03-08T00:00:00.000Z" data-article-date-source="ms.date">03/08/2018</time>
+							</li>
+								<li class="readingTime">11 minutes to read</li>
+							<li class="contributors-holder">
+								<span class="contributors-text">Contributors</span>
+								<ul class="contributors" data-bi-name="contributors">
+											<li><a href="https://github.com/tklarsen" title="Tone Kristin Larsen" data-bi-name="contributorprofile"><img src="Deploy%20people%20search%20in%20SharePoint%20Server%20%20%20Microsoft%20Docs_files/tklarsen.jpg" data-src="https://github.com/tklarsen.png?size=32" alt="Tone Kristin Larsen"></a></li>
+											<li><a href="https://github.com/get-itips" title="Andres Mariano Gorzelany" data-bi-name="contributorprofile"><img src="Deploy%20people%20search%20in%20SharePoint%20Server%20%20%20Microsoft%20Docs_files/get-itips.jpg" data-src="https://github.com/get-itips.png?size=32" alt="Andres Mariano Gorzelany"></a></li>
+											<li><a href="https://github.com/IrenePasternack" title="Irene Pasternack" data-bi-name="contributorprofile"><img src="Deploy%20people%20search%20in%20SharePoint%20Server%20%20%20Microsoft%20Docs_files/IrenePasternack.jpg" data-src="https://github.com/IrenePasternack.png?size=32" alt="Irene Pasternack"></a></li>
+											<li><a href="https://github.com/MikePlumleyMSFT" title="Mike Plumley" data-bi-name="contributorprofile"><img src="Deploy%20people%20search%20in%20SharePoint%20Server%20%20%20Microsoft%20Docs_files/MikePlumleyMSFT.jpg" data-src="https://github.com/MikePlumleyMSFT.png?size=32" alt="Mike Plumley"></a></li>
+											<li><a href="https://github.com/dstrome2" title="dstrome2" data-bi-name="contributorprofile"><img src="Deploy%20people%20search%20in%20SharePoint%20Server%20%20%20Microsoft%20Docs_files/contributor.svg" data-src="https://github.com/dstrome2.png?size=32" alt="dstrome2"></a></li>
+											<li><a href="https://github.com/MicrosoftDocs/OfficeDocs-SharePoint/blob/live/SharePoint/SharePointServer/search/deploy-people-search.md" title="all 7 contributors" data-bi-name="contributorshowall"><span aria-hidden="true">all</span></a></li>
+								</ul>
+							</li>
+
+						</ul>
+
+
+
+						<nav id="center-doc-outline" class="doc-outline is-hidden-desktop" data-bi-name="intopic toc" role="navigation" aria-label="Article Outline">
+							<h3>In this article</h3>
+						<ol><li><a href="#people-search-prerequisites">People search prerequisites</a></li><li><a href="#set-up-people-search">Set up people search</a></li><li><a href="#to-create-a-crawl-rule-to-authenticate-to-the-user-profile-service-application">To create a crawl rule to authenticate to the User Profile service application</a></li><li><a href="#to-remove-the-profile-store-url-from-the-preconfigured-content-source">To remove the profile store URL from the preconfigured content source</a></li><li><a href="#to-create-a-content-source-that-specifies-how-to-crawl-the-profile-store">To create a content source that specifies how to crawl the profile store</a></li><li><a href="#add-data-for-people-search">Add data for people search</a></li><li><a href="#crawl-the-profile-store">Crawl the profile store</a></li><li><a href="#see-also">See also</a></li></ol></nav>
+
+
+						<!-- <content> -->
+							
+<p><token><strong>APPLIES TO:</strong> <img src="Deploy%20people%20search%20in%20SharePoint%20Server%20%20%20Microsoft%20Docs_files/yes.png" alt="yes" data-linktype="relative-path">2013 <img src="Deploy%20people%20search%20in%20SharePoint%20Server%20%20%20Microsoft%20Docs_files/yes.png" alt="yes" data-linktype="relative-path">2016 <img src="Deploy%20people%20search%20in%20SharePoint%20Server%20%20%20Microsoft%20Docs_files/yes.png" alt="yes" data-linktype="relative-path">2019 <img src="Deploy%20people%20search%20in%20SharePoint%20Server%20%20%20Microsoft%20Docs_files/no.png" alt="no" data-linktype="relative-path">SharePoint Online </token></p>
+
+<p>People search is a SharePoint Server feature that allows users to get
+ information about people in the organization and to get links to the 
+documents that they have authored. Users can access this feature by 
+entering a search query in the enterprise Search Center search box and 
+clicking the link for the <strong>People</strong> search vertical.</p>
+<p>A search vertical filters search results so that only a certain 
+subset of all relevant results is displayed. SharePoint Server provides 
+four preconfigured search verticals: <strong>Everything</strong>, <strong>People</strong>, <strong>Conversations</strong>, and <strong>Videos</strong>.
+ You can see the links for these search verticals in the Search 
+Navigation Web Part, which is below the search box in the enterprise 
+Search Center, as shown in the following screen shot.</p>
+<p><img src="Deploy%20people%20search%20in%20SharePoint%20Server%20%20%20Microsoft%20Docs_files/peoplesearchvertical.jpg" alt="Screen shot of the 4 preconfigured search verticals" data-linktype="relative-path"></p>
+<p>When a user enters a search query in the search box and then clicks 
+one of the search-vertical links, the Search system returns search 
+results that correspond to that search vertical only. For example, if 
+the user enters Microsoft Azure in the search box and then selects the <strong>People</strong>
+ search-vertical link, the Search system returns only search results 
+that are people in your organization who are involved with Microsoft 
+Azure.</p>
+<p>This article describes the prerequisites that you must complete to 
+make people search possible, and addresses other considerations related 
+to making people search work.</p>
+<h2 id="people-search-prerequisites">People search prerequisites<a class="docon docon-link heading-anchor" href="#people-search-prerequisites" aria-labelledby="people-search-prerequisites"></a></h2>
+<p><a name="BKMK_Prereqs"> </a></p>
+<p>People search has the following prerequisites:</p>
+<ul>
+<li><p>A Search service application must be running in the farm. For more information, see <a href="https://docs.microsoft.com/en-us/sharepoint/search/create-and-configure-a-search-service-application" data-linktype="relative-path">Create and configure a Search service application in SharePoint Server 2016</a>. The farm must also have a Search Center that uses the Enterprise Search Center template. For more information, see <a href="https://docs.microsoft.com/en-us/sharepoint/search/create-a-search-center-site" data-linktype="relative-path">Create a Search Center site in SharePoint Server</a>.</p>
+</li>
+<li><p>A Managed Metadata service application must be running in the farm. For more information, see <a href="https://docs.microsoft.com/en-us/previous-versions/office/sharepoint-server-2010/ee424403(v=office.14)" data-linktype="absolute-path">Overview of managed metadata service applications in SharePoint Server 2013</a>.</p>
+</li>
+<li><p>User profile synchronization must be configured in the farm. If 
+this has not been done yet, at a minimum you must complete the following
+ procedures that are described in <a href="https://docs.microsoft.com/en-us/sharepoint/administration/configure-profile-synchronization" data-linktype="relative-path">Synchronize user and group profiles in SharePoint Server 2013</a>:</p>
+<ul>
+<li><p><a href="https://docs.microsoft.com/en-us/sharepoint/administration/configure-profile-synchronization#Phase0" data-linktype="relative-path">Phase 0: Configure the farm</a></p>
+</li>
+<li><p><a href="https://docs.microsoft.com/en-us/sharepoint/administration/configure-profile-synchronization#Phase1" data-linktype="relative-path">Phase 1: Start the User Profile synchronization service</a></p>
+</li>
+</ul>
+<p>For more information, see <a href="https://docs.microsoft.com/en-us/sharepoint/administration/profile-synchronization-in-sharepoint-server-2013" data-linktype="relative-path">Overview of profile synchronization in SharePoint Server 2013</a> and <a href="https://docs.microsoft.com/en-us/sharepoint/administration/plan-profile-synchronization-for-sharepoint-server-2013" data-linktype="relative-path">Plan profile synchronization for SharePoint Server 2013</a>.</p>
+</li>
+</ul>
+<h2 id="set-up-people-search">Set up people search<a class="docon docon-link heading-anchor" href="#set-up-people-search" aria-labelledby="set-up-people-search"></a></h2>
+<p><a name="BKMK_SetUp"> </a></p>
+<p>To set up people search, you must configure My Sites settings and configure crawling.</p>
+<h3 id="configure-my-sites-settings">Configure My Sites settings<a class="docon docon-link heading-anchor" href="#configure-my-sites-settings" aria-labelledby="configure-my-sites-settings"></a></h3>
+<p>You configure My Sites for a User Profile service application to 
+specify the My Site host location and other settings. For more 
+information, see <a href="https://docs.microsoft.com/en-us/sharepoint/install/my-sites-planning" data-linktype="relative-path">Plan for My Sites in SharePoint Server</a> and <a href="https://docs.microsoft.com/en-us/sharepoint/install/configure-my-sites#configsettings" data-linktype="relative-path">Configure My Site settings for the User Profile service application</a>.</p>
+<p>After you configure My Sites settings, the next step is to configure crawling.</p>
+<h3 id="configure-crawling">Configure crawling<a class="docon docon-link heading-anchor" href="#configure-crawling" aria-labelledby="configure-crawling"></a></h3>
+<p>When you configure My Sites, the default content access account for search is automatically given <strong>Retrieve People Data for Search Crawlers</strong>
+ permissions in the User Profile service application. If you want to use
+ a different content access account to crawl the profile store, you must
+ make sure that the account has permissions to crawl the profile store. 
+Use the following procedure to grant access to the profile store for a 
+different account.</p>
+<h3 id="to-grant-access-to-an-account-to-crawl-the-profile-store">To grant access to an account to crawl the profile store<a class="docon docon-link heading-anchor" href="#to-grant-access-to-an-account-to-crawl-the-profile-store" aria-labelledby="to-grant-access-to-an-account-to-crawl-the-profile-store"></a></h3>
+<ol>
+<li><p>Verify that the user account that is performing this procedure is an administrator for the Search service application.</p>
+</li>
+<li><p>Start SharePoint Central Administration.</p>
+</li>
+</ol>
+<ul>
+<li><p>For Windows Server 2008 R2:</p>
+<ul>
+<li>Click <strong>Start</strong>, click <strong>SharePoint</strong>, and then click <strong>SharePoint Central Administration</strong>.</li>
+</ul>
+</li>
+<li><p>For Windows Server 2012:</p>
+<ul>
+<li><p>On the <strong>Start</strong> screen, click <strong>SharePoint Central Administration</strong>.</p>
+<p>If <strong>SharePoint Central Administration</strong> is not on the <strong>Start</strong> screen:</p>
+</li>
+<li><p>Right-click <strong>Computer</strong>, click <strong>All apps</strong>, and then click <strong>SharePoint Central Administration</strong>.</p>
+</li>
+</ul>
+<p>For more information about how to interact with Windows Server 2012, see <a href="https://go.microsoft.com/fwlink/p/?LinkId=276950" data-linktype="external">Common Management Tasks and Navigation in Windows Server 2012</a>.</p>
+</li>
+</ul>
+<ol start="3">
+<li><p>In Central Administration, in the <strong>Application Management</strong> section, click <strong>Manage service applications</strong>.</p>
+</li>
+<li><p>On the <strong>Manage Service Applications</strong> page, click the row that contains the User Profile service application, and then in the ribbon, click <strong>Administrators</strong>.</p>
+</li>
+<li><p>In the <strong>Administrators for User Profile Service Application</strong> dialog box, in the <strong>To add an account</strong> box, type a user account in the form  <em>domain\user name</em>  .</p>
+</li>
+<li><p>Click <strong>Add</strong>.</p>
+</li>
+<li><p>In the <strong>Permissions</strong> list, select the <strong>Retrieve People Data for Search Crawlers</strong> check box.</p>
+</li>
+<li><p>Click <strong>OK</strong>.</p>
+</li>
+</ol>
+<p>After you give the account access to crawl the profile store, you 
+must create a crawl rule to specify that you want to use that account 
+when you crawl the profile store. Use the following procedure to create a
+ crawl rule for this purpose.</p>
+<h2 id="to-create-a-crawl-rule-to-authenticate-to-the-user-profile-service-application">To create a crawl rule to authenticate to the User Profile service application<a class="docon docon-link heading-anchor" href="#to-create-a-crawl-rule-to-authenticate-to-the-user-profile-service-application" aria-labelledby="to-create-a-crawl-rule-to-authenticate-to-the-user-profile-service-application"></a></h2>
+<p><a name="BKMK_SetUp"> </a></p>
+<ol>
+<li><p>Verify that the user account that is performing this procedure is an administrator for the Search service application.</p>
+</li>
+<li><p>In Central Administration, in the <strong>Application Management</strong> section, click <strong>Manage service applications</strong>.</p>
+</li>
+<li><p>On the <strong>Manage Service Applications</strong> page, click the Search service application for which you want to create a crawl rule.</p>
+</li>
+<li><p>On the <strong>Search Administration</strong> page, in the Quick Launch, in the <strong>Crawling</strong> section, click <strong>Crawl Rules</strong>.</p>
+</li>
+<li><p>On the <strong>Manage Crawl Rules</strong> page, click <strong>New Crawl Rule</strong>.</p>
+</li>
+<li><p>In the <strong>Path</strong> section, in the <strong>Path</strong> box, type the start address for the User Profile service application in the form sps3://  <em>My_Site_host_URL</em>, where  <em>My_Site_host_URL</em> is the URL for the Web application where you deployed the My Sites site collection.</p>
+<p>If the web application where you deployed the My Sites site 
+collection uses Secure Sockets Layer (SSL), then type the start address 
+in the form sps3s:// <em>My_Site_host_URL</em>.</p>
+</li>
+<li><p>Click <strong>Use regular expression syntax for matching this rule</strong> if you want to use regular expression syntax in the path.</p>
+</li>
+<li><p>In the <strong>Crawl Configuration</strong> section, select <strong>Include all items in this path</strong>.</p>
+</li>
+<li><p>In the <strong>Specify Authentication</strong> section, select <strong>Specify a different content access account</strong>.</p>
+</li>
+<li><p>In the <strong>Account</strong> box that appears, type the user account to which you gave access to the profile store in the form  <em>domain\user name</em>.</p>
+</li>
+<li><p>Type the password for the account that you specified in the <strong>Password</strong> and <strong>Confirm Password</strong> boxes.</p>
+</li>
+<li><p>Clear the <strong>Do not allow Basic Authentication</strong> check box only if you want to allow the user account credentials to be sent as plaintext.</p>
+<div class="alert is-info">
+<p class="alert-title"><span class="docon docon-status-error-outline" aria-hidden="true"></span> Note</p>
+<p>You should not clear the <strong>Do not allow Basic Authentication</strong> check box unless you are using SSL to encrypt the website traffic. For more information, see <a href="https://docs.microsoft.com/en-us/sharepoint/security-for-sharepoint-server/plan-user-authentication" data-linktype="relative-path">Plan for user authentication methods in SharePoint Server</a>.</p>
+</div>
+</li>
+<li><p>Click <strong>OK</strong>.</p>
+</li>
+</ol>
+<p>For more information, see <a href="https://docs.microsoft.com/en-us/sharepoint/search/manage-crawl-rules" data-linktype="relative-path">Manage crawl rules in SharePoint Server</a>.</p>
+<p>When you configure My Sites, the starting URL to crawl the profile store (sps3:// <em>My_Site_host_URL</em> or sps3s://  <em>My_Site_host_URL</em>) is automatically added to the preconfigured content source <strong>Local SharePoint Sites</strong>.
+ We recommend that you remove the URL of the profile store from the 
+preconfigured content source and then create a separate content source 
+to crawl only the profile store. This allows you to crawl the profile 
+store on a different schedule from other crawls.</p>
+<p>Use the following procedure to remove the URL of the profile store from the preconfigured content source.</p>
+<h2 id="to-remove-the-profile-store-url-from-the-preconfigured-content-source">To remove the profile store URL from the preconfigured content source<a class="docon docon-link heading-anchor" href="#to-remove-the-profile-store-url-from-the-preconfigured-content-source" aria-labelledby="to-remove-the-profile-store-url-from-the-preconfigured-content-source"></a></h2>
+<p><a name="BKMK_SetUp"> </a></p>
+<ol>
+<li><p>Verify that the user account that is performing this procedure is an administrator for the Search service application.</p>
+</li>
+<li><p>In Central Administration, in the <strong>Application Management</strong> section, click <strong>Manage service applications</strong>.</p>
+</li>
+<li><p>On the <strong>Manage Service Applications</strong> page, click <strong>Search Service Application</strong>.</p>
+</li>
+<li><p>On the <strong>Search Administration</strong> page, in the Quick Launch, in the <strong>Crawling</strong> section, click <strong>Content Sources</strong>.</p>
+</li>
+<li><p>On the <strong>Manage Content Sources</strong> page, click the link to the preconfigured content source ( <strong>Local SharePoint sites</strong>).</p>
+</li>
+<li><p>In the <strong>Start Addresses</strong> section, remove the URL for the profile store (sps3://  <em>My_Site_host_URL</em> or sps3s://  <em>My_Site_host_URL</em>, where  <em>My_Site_host_URL</em> is the URL for the web application where you deployed the My Sites site collection).</p>
+</li>
+<li><p>Click <strong>OK</strong>.</p>
+<p>Use the following procedure to create a content source that specifies how to crawl the profile store. For more information, see <a href="https://docs.microsoft.com/en-us/sharepoint/search/add-edit-or-delete-a-content-source" data-linktype="relative-path">Add, edit, or delete a content source in SharePoint Server</a>.</p>
+</li>
+</ol>
+<h2 id="to-create-a-content-source-that-specifies-how-to-crawl-the-profile-store">To create a content source that specifies how to crawl the profile store<a class="docon docon-link heading-anchor" href="#to-create-a-content-source-that-specifies-how-to-crawl-the-profile-store" aria-labelledby="to-create-a-content-source-that-specifies-how-to-crawl-the-profile-store"></a></h2>
+<p><a name="BKMK_SetUp"> </a></p>
+<ol>
+<li><p>Verify that the user account that is performing this procedure is an administrator for the Search service application.</p>
+</li>
+<li><p>In Central Administration, in the <strong>Application Management</strong> section, click <strong>Manage service applications</strong>.</p>
+</li>
+<li><p>On the <strong>Manage Service Applications</strong> page, click <strong>Search Service Application</strong>.</p>
+</li>
+<li><p>On the <strong>Search Administration</strong> page, in the Quick Launch, in the <strong>Crawling</strong> section, click <strong>Content Sources</strong>.</p>
+</li>
+<li><p>On the <strong>Manage Content Sources</strong> page, click <strong>New Content Source</strong>.</p>
+</li>
+<li><p>On the <strong>Add Content Source</strong> page, in the <strong>Name</strong> section, type a name for this content source.</p>
+</li>
+<li><p>In the <strong>Content Source Type</strong> section, ensure that <strong>SharePoint Sites</strong> is selected.</p>
+</li>
+<li><p>In the <strong>Start Addresses</strong> section, type the start address in the form sps3://  <em>My_Site_host_URL</em>, where  <em>My_Site_host_URL</em> is the URL for the web application where you deployed the My Sites site collection.</p>
+<p>If the web application where you deployed the My Sites site 
+collection uses SSL, then type the start address in the form sps3s:// <em>My_Site_host_URL</em>.</p>
+</li>
+<li><p>In the <strong>Crawl Settings</strong> section, leave the default value of <strong>Crawl everything under the host name for each start address</strong>.</p>
+</li>
+<li><p>In the <strong>Crawl Schedules</strong> section, do the following:</p>
+</li>
+</ol>
+<ul>
+<li><p>Select <strong>Enable Continuous Crawls</strong> or <strong>Enable Incremental Crawls</strong>.</p>
+<p>A continuous crawl automatically provides maximum freshness for the 
+content source without an incremental crawl schedule. For more 
+information, see <a href="https://docs.microsoft.com/en-us/sharepoint/search/manage-continuous-crawls" data-linktype="relative-path">Manage continuous crawls in SharePoint Server</a>.</p>
+<p>If you select <strong>Enable Incremental Crawls</strong>, create an incremental crawl schedule.</p>
+</li>
+<li><p>Optionally create a schedule for full crawls.</p>
+</li>
+</ul>
+<ol start="11">
+<li><p>If you selected <strong>Enable Incremental Crawls</strong>, in the <strong>Content Source Priority</strong> section, select the priority for this content source.</p>
+<div class="alert is-info">
+<p class="alert-title"><span class="docon docon-status-error-outline" aria-hidden="true"></span> Note</p>
+<p>The <strong>Content Source Priority</strong> section does not appear when you specify the content source type as <strong>SharePoint Sites</strong> and you select <strong>Enable Continuous Crawls</strong>.</p>
+</div>
+</li>
+<li><p>Click <strong>OK</strong>.</p>
+</li>
+</ol>
+<h2 id="add-data-for-people-search">Add data for people search<a class="docon docon-link heading-anchor" href="#add-data-for-people-search" aria-labelledby="add-data-for-people-search"></a></h2>
+<p><a name="BKMK_Populate"> </a></p>
+<p>To get the best results from people search, you should add as much 
+information as you can by adding user profiles to the profile store and 
+adding information to My Sites.</p>
+<h3 id="add-user-profiles-to-the-profile-store">Add user profiles to the profile store<a class="docon docon-link heading-anchor" href="#add-user-profiles-to-the-profile-store" aria-labelledby="add-user-profiles-to-the-profile-store"></a></h3>
+<p>Before you can obtain meaningful people search results, you must add 
+user profiles to the User Profile service application. You can do this 
+in the following ways:</p>
+<ul>
+<li><p>Import user profiles from the directory service. For more information, see the following articles:</p>
+<ul>
+<li><p><a href="https://docs.microsoft.com/en-us/sharepoint/administration/plan-profile-synchronization-for-sharepoint-server-2013" data-linktype="relative-path">Plan profile synchronization for SharePoint Server 2013</a></p>
+</li>
+<li><p><a href="https://docs.microsoft.com/en-us/sharepoint/administration/configure-profile-synchronization" data-linktype="relative-path">Synchronize user and group profiles in SharePoint Server 2013</a></p>
+</li>
+<li><p><a href="https://docs.microsoft.com/en-us/sharepoint/administration/configure-profile-synchronization-by-using-sharepoint-active-directory-import" data-linktype="relative-path">Configure profile synchronization by using SharePoint Active Directory Import in SharePoint Server</a></p>
+</li>
+</ul>
+</li>
+<li><p>Copy user profiles from one farm to another by using the User Profile Replication Engine (UPRE). For more information, see <a href="https://docs.microsoft.com/en-us/SharePoint/administration/manage-profile-synchronization" data-linktype="absolute-path">Use UPRE to replicate user profiles across multiple farms in SharePoint Server 2013</a>.</p>
+</li>
+<li><p>Add user profiles manually.</p>
+</li>
+<li><p>Synchronize with an external data source by using the Business Data Connectivity service. For more information, see <a href="https://docs.microsoft.com/en-us/sharepoint/administration/configure-profile-synchronization#Phase3" data-linktype="relative-path">Phase 3: Configure connections and import data from business systems</a> in the article <a href="https://docs.microsoft.com/en-us/sharepoint/administration/configure-profile-synchronization" data-linktype="relative-path">Synchronize user and group profiles in SharePoint Server 2013</a>.</p>
+</li>
+</ul>
+<div class="alert is-primary">
+<p class="alert-title"><span class="docon docon-status-info-outline" aria-hidden="true"></span> Important</p>
+<p>For a test environment, we recommend that you do not synchronize the 
+profile store to a directory service or other external data source that 
+is in a production environment. Instead, create a copy of the directory 
+service and synchronize the copy with the profile store.</p>
+</div>
+<p>Use the following procedure to view the user profiles in the User Profile service application.</p>
+<p><strong>To view a list of user profiles in the User Profile service application</strong></p>
+<ol>
+<li><p>Verify that the user account that is performing this procedure is an administrator for the User Profile service application.</p>
+</li>
+<li><p>In Central Administration, in the <strong>Application Management</strong> section, click <strong>Manage service applications</strong>.</p>
+</li>
+<li><p>On the <strong>Manage Service Applications</strong> page, click the User Profile service application.</p>
+</li>
+<li><p>On the <strong>Manage Profile Service</strong> page, in the <strong>People</strong> section, click <strong>Manage User Profiles</strong>.</p>
+</li>
+<li><p>On the <strong>Manage User Profiles</strong> page, in the <strong>Find profiles</strong> box, type the name of the domain of which the users are members.</p>
+<p>Do not type the fully qualified domain name. For example, if users are members of the Contoso.com domain, type <strong>Contoso</strong> in the <strong>Find profiles</strong> box.</p>
+</li>
+<li><p>Click <strong>Find</strong>.</p>
+</li>
+</ol>
+<h3 id="add-information-to-my-sites">Add information to My Sites<a class="docon docon-link heading-anchor" href="#add-information-to-my-sites" aria-labelledby="add-information-to-my-sites"></a></h3>
+<p>My Sites keep information in the User Profile service application 
+databases. The User Profile service application stores much of the 
+information that appears in results for people search. People search 
+results become more useful as users add more information to their My 
+Sites.</p>
+<p>The first time that a user accesses their My Site, also known as 
+their personal site, a My Site is created for them and a profile is 
+automatically added to the User Profile service application.</p>
+<p>To add information to a user's My Site, log on as a user for whom a 
+user profile was created in the User Profile service application, and 
+then go to that user's My Site. In the user's My Site, you can provide 
+information about the user's expertise and interests. To see how the 
+information that you added affects the people search results that 
+appear, perform a crawl of the profile store, and then search on the 
+user's name.</p>
+<h2 id="crawl-the-profile-store">Crawl the profile store<a class="docon docon-link heading-anchor" href="#crawl-the-profile-store" aria-labelledby="crawl-the-profile-store"></a></h2>
+<p><a name="BKMK_CrawlProfileStore"> </a></p>
+<p>You are now ready to crawl the profile store. For information about how to start the crawl, see <a href="https://docs.microsoft.com/en-us/sharepoint/search/start-pause-resume-or-stop-a-crawl" data-linktype="relative-path">Start, pause, resume, or stop a crawl in SharePoint Server</a>.</p>
+<div class="alert is-info">
+<p class="alert-title"><span class="docon docon-status-error-outline" aria-hidden="true"></span> Note</p>
+<p>We recommend that you crawl the profile store and wait about two 
+hours after the crawl finishes before you start the first crawl of the 
+preconfigured content source (that is, local SharePoint sites). After 
+the crawl of the profile store finishes, the search system generates a 
+list to standardize people's names. This is so that when a person's name
+ has different forms in search results, the results are displayed in a 
+single group corresponding to one name. For example, all documents 
+authored by Anne Weiler or A. Weiler or alias AnneW can be displayed in 
+the search results in a result block that is labeled "Documents by Anne 
+Weiler". Similarly, all documents authored by any of those identities 
+can be displayed under the heading "Anne Weiler" in the refinement panel
+ if "Author" is one of the categories there.</p>
+</div>
+<p>For information about how to view the status of a crawl, see <a href="https://docs.microsoft.com/en-us/sharepoint/search/start-pause-resume-or-stop-a-crawl#proc1" data-linktype="relative-path">Start, pause, resume, or stop a crawl for a content source</a>.</p>
+<h2 id="see-also">See also<a class="docon docon-link heading-anchor" href="#see-also" aria-labelledby="see-also"></a></h2>
+<p><a name="BKMK_CrawlProfileStore"> </a></p>
+<p><a href="https://docs.microsoft.com/en-us/sharepoint/administration/user-profile-service-administration" data-linktype="relative-path">Administer the User Profile service in SharePoint Server</a></p>
+<p><a href="https://docs.microsoft.com/en-us/sharepoint/administration/profile-synchronization-in-sharepoint-server-2013" data-linktype="relative-path">Overview of profile synchronization in SharePoint Server 2013</a></p>
+<p><a href="https://docs.microsoft.com/en-us/sharepoint/administration/manage-profile-synchronization" data-linktype="relative-path">Manage user profile synchronization in SharePoint Server</a></p>
+<p><a href="https://docs.microsoft.com/en-us/sharepoint/install/my-sites-planning" data-linktype="relative-path">Plan for My Sites in SharePoint Server</a></p>
+<p><a href="https://docs.microsoft.com/en-us/sharepoint/search/create-and-configure-a-search-service-application" data-linktype="relative-path">Create and configure a Search service application in SharePoint Server 2016</a></p>
+<p><a href="https://docs.microsoft.com/en-us/sharepoint/search/manage-crawling" data-linktype="relative-path">Manage crawling in SharePoint Server</a></p>
+<p><a href="https://docs.microsoft.com/en-us/sharepoint/search/add-edit-or-delete-a-content-source" data-linktype="relative-path">Add, edit, or delete a content source in SharePoint Server</a></p>
+
+						<!-- </content> -->
+
+						</main>
+
+						<!-- feedback section -->
+
+
+
+<section class="feedback-section" data-bi-name="feedback-section">
+
+
+	<h2 id="feedback">Feedback</h2>
+
+	<div class="alert choose-feedback-type">
+		<p id="send-feedback-about">Send feedback about:</p>
+
+		<div class="choose-feedback-buttons">
+			<a class="button feedback-type-product has-margin-bottom-small" aria-describedby="send-feedback-about" href="https://sharepoint.uservoice.com/forums/330321-sharepoint-search" data-bi-name="product-feedback">
+				<span>This product</span>
+				<span class="icon docon docon-navigate-external" aria-hidden="true"></span>
+			</a>
+
+			<div class="field has-addons is-inline-flex has-margin-bottom-small">
+				<div class="control has-margin-top-none has-margin-bottom-none">
+					<button class="button feedback-sign-in-button has-text-wrap" aria-describedby="send-feedback-about" data-bi-name="feedback-sign-in">
+						<span class="icon docon docon-brand-github" aria-hidden="true"></span>
+						<span>This page</span>
+					</button>
+				</div>
+				<div class="control dropdown has-caret has-margin-top-none has-margin-bottom-none" auto-align="">
+					<button class="button dropdown-trigger is-full-height" aria-describedby="send-feedback-about" aria-haspopup="true" aria-expanded="false" aria-controls="fbm0" aria-label="Additional feedback options" data-bi-name="documentation-feedback-menu">
+						<span class="icon" aria-hidden="true">
+							<span class="docon docon-chevron-down-light expanded-indicator"></span>
+						</span>
+					</button>
+					<div id="fbm0" class="dropdown-menu documentation-feedback-menu">
+						You may also leave feedback directly on <a data-bi-name="create-issue-on-github" href="https://github.com/MicrosoftDocs/OfficeDocs-SharePoint/issues/new?title=&amp;body=%0A%0A%5BEnter%20feedback%20here%5D%0A%0A%0A---%0A%23%23%23%23%20Document%20Details%0A%0A%E2%9A%A0%20*Do%20not%20edit%20this%20section.%20It%20is%20required%20for%20docs.microsoft.com%20%E2%9E%9F%20GitHub%20issue%20linking.*%0A%0A*%20ID%3A%2000489ff1-48d5-23ae-e584-73c2149ca651%0A*%20Version%20Independent%20ID%3A%208400d2ff-f9f6-6728-2e11-3129e2eae4e7%0A*%20Content%3A%20%5BDeploy%20people%20search%20in%20SharePoint%20Server%5D(https%3A%2F%2Fdocs.microsoft.com%2Fen-us%2Fsharepoint%2Fsearch%2Fdeploy-people-search)%0A*%20Content%20Source%3A%20%5BSharePoint%2FSharePointServer%2Fsearch%2Fdeploy-people-search.md%5D(https%3A%2F%2Fgithub.com%2FMicrosoftDocs%2FOfficeDocs-SharePoint%2Fblob%2Flive%2FSharePoint%2FSharePointServer%2Fsearch%2Fdeploy-people-search.md)%0A*%20Product%3A%20**sharepoint-server-itpro**%0A*%20GitHub%20Login%3A%20%40tklarsen%0A*%20Microsoft%20Alias%3A%20**tlarsen**">GitHub <span class="docon docon-navigate-external" aria-hidden="true"></span></a>.					</div>
+				</div>
+			</div>
+
+			<div class="field has-addons is-inline-flex has-margin-bottom-small" hidden="">
+				<div class="control has-margin-top-none has-margin-bottom-none">
+					<button class="button feedback-form-toggle" aria-describedby="send-feedback-about" aria-expanded="false" aria-controls="feedback-form" data-bi-name="documentation-feedback">
+This page					</button>
+				</div>
+				<div class="control dropdown has-caret has-margin-top-none has-margin-bottom-none" auto-align="">
+					<button class="button dropdown-trigger" aria-describedby="send-feedback-about" aria-haspopup="true" aria-expanded="false" aria-controls="fbm1" aria-label="Additional feedback options" data-bi-name="documentation-feedback-menu">
+						<span class="icon" aria-hidden="true">
+							<span class="docon docon-chevron-down-light expanded-indicator"></span>
+						</span>
+					</button>
+					<div id="fbm1" class="dropdown-menu documentation-feedback-menu">
+						You may also leave feedback directly on <a data-bi-name="create-issue-on-github" href="https://github.com/MicrosoftDocs/OfficeDocs-SharePoint/issues/new?title=&amp;body=%0A%0A%5BEnter%20feedback%20here%5D%0A%0A%0A---%0A%23%23%23%23%20Document%20Details%0A%0A%E2%9A%A0%20*Do%20not%20edit%20this%20section.%20It%20is%20required%20for%20docs.microsoft.com%20%E2%9E%9F%20GitHub%20issue%20linking.*%0A%0A*%20ID%3A%2000489ff1-48d5-23ae-e584-73c2149ca651%0A*%20Version%20Independent%20ID%3A%208400d2ff-f9f6-6728-2e11-3129e2eae4e7%0A*%20Content%3A%20%5BDeploy%20people%20search%20in%20SharePoint%20Server%5D(https%3A%2F%2Fdocs.microsoft.com%2Fen-us%2Fsharepoint%2Fsearch%2Fdeploy-people-search)%0A*%20Content%20Source%3A%20%5BSharePoint%2FSharePointServer%2Fsearch%2Fdeploy-people-search.md%5D(https%3A%2F%2Fgithub.com%2FMicrosoftDocs%2FOfficeDocs-SharePoint%2Fblob%2Flive%2FSharePoint%2FSharePointServer%2Fsearch%2Fdeploy-people-search.md)%0A*%20Product%3A%20**sharepoint-server-itpro**%0A*%20GitHub%20Login%3A%20%40tklarsen%0A*%20Microsoft%20Alias%3A%20**tlarsen**">GitHub <span class="docon docon-navigate-external" aria-hidden="true"></span></a>.					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<form class="feedback-form" id="feedback-form" accept-charset="UTF-8" autocomplete="off" action="javascript:" hidden="">
+		<h3 class="feedback-form-heading current-user">
+			<img class="avatar" alt="Avatar" aria-hidden="true" src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTIwIiBoZWlnaHQ9IjEyMCIgdmlld0JveD0iMCAwIDEyMCAxMjAiIGZpbGw9InRyYW5zcGFyZW50IiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPjwvc3ZnPg==" width="36" height="36">
+			<span class="username" aria-hidden="true"></span>
+			<span class="visually-hidden">Liquid error: Can't find the localized string giveDocumentationFeedback for template Conceptual.</span>
+		</h3>
+
+		<label>
+			<span class="visually-hidden">Issue Title</span>
+			<input class="input is-radiusless has-margin-bottom-small" name="title" type="text" placeholder="Issue Title" required="" pattern=".*[^\s]+.*">
+		</label>
+		<label>
+			<span class="visually-hidden">Leave a comment</span>
+			<textarea name="body" placeholder="Leave a comment" class="textarea is-radiusless" required=""></textarea>
+		</label>
+
+		<div class="action-container">
+			<button class="button is-primary" type="submit" name="submit">Submit feedback</button>
+		</div>
+	</form>
+
+	<div class="feedback-status alert is-loading">
+		<p>Loading feedback...</p>
+	</div>
+
+	<div class="feedback-tab-group tabGroup" data-tab-group-independent="" data-bi-name="tab-group" hidden="">
+		<ul role="tablist">
+			<li role="presentation">
+				<a href="#tabpanel-issues-open" role="tab" aria-controls="tabpanel-issues-open" data-tab="issues-open" aria-label="Open Issues" data-bi-name="tab" aria-selected="true" tabindex="0"></a>
+			</li>
+			<li role="presentation">
+				<a href="#tabpanel-issues-closed" role="tab" aria-controls="tabpanel-issues-closed" data-tab="issues-closed" aria-label="Closed Issues" data-bi-name="tab" aria-selected="false" tabindex="-1"></a>
+			</li>
+		</ul>
+		<section id="tabpanel-issues-open" role="tabpanel" data-tab="issues-open">
+			<div class="no-issues-placeholder">There are no open issues</div>
+			<ul class="github-issues-list" aria-label="Open Issues"></ul>
+		</section>
+		<section id="tabpanel-issues-closed" role="tabpanel" data-tab="issues-closed" aria-hidden="true" hidden="hidden">
+			<div class="no-issues-placeholder">There are no closed issues</div>
+			<ul class="github-issues-list" aria-label="Closed Issues"></ul>
+		</section>
+	</div>
+	<div class="action-container">
+		<a class="view-on-github" href="https://github.com/MicrosoftDocs/OfficeDocs-SharePoint/issues?utf8=%E2%9C%93&amp;q=%228400d2ff-f9f6-6728-2e11-3129e2eae4e7%22&amp;in=body" data-bi-name="view-on-github" hidden="">
+			<span class="docon docon-brand-github" aria-hidden="true"></span>
+			<span>View on GitHub</span>
+			<span class="docon docon-navigate-external" aria-hidden="true"></span>
+		</a>
+	</div>
+</section>
+						<!-- end feedback section -->
+
+						<div class="footerContainer is-visible-interactive has-default-focus ">
+<footer id="footer-interactive" data-bi-name="footer" class="footer-layout">
+
+    <a data-mscc-ic="false" class="locale-selector-link" href="https://docs.microsoft.com/en-us/locale?target=https://docs.microsoft.com/en-us/sharepoint/search/deploy-people-search" data-bi-name="select-locale"><span class="icon docon docon-world is-size-4 has-margin-right-small" aria-hidden="true"></span><span class="local-selector-link-text">English (United States)</span></a>
+
+    <ul class="links" data-bi-name="footerlinks">
+		<li><a data-mscc-ic="false" href="https://docs.microsoft.com/previous-versions/" data-bi-name="archivelink">Previous Version Docs</a></li>
+		<li><a data-mscc-ic="false" href="https://docs.microsoft.com/teamblog" data-bi-name="bloglink">Blog</a></li>
+		<li><a data-mscc-ic="false" href="https://docs.microsoft.com/contribute" data-bi-name="contributorGuide">Contribute</a></li>
+			<li><a data-mscc-ic="false" href="https://go.microsoft.com/fwlink/?LinkId=521839" data-bi-name="privacy">Privacy &amp; Cookies</a></li>
+		<li><a data-mscc-ic="false" href="https://docs.microsoft.com/en-us/legal/termsofuse" data-bi-name="termsofuse">Terms of Use</a></li>
+		<li><a data-mscc-ic="false" href="https://aka.ms/sitefeedback" data-bi-name="feedback">Site Feedback</a></li>
+		<li><a data-mscc-ic="false" href="https://www.microsoft.com/en-us/legal/intellectualproperty/Trademarks/EN-US.aspx" data-bi-name="trademarks">Trademarks</a></li>
+    </ul>
+</footer>
+						</div>
+					</div>
+
+					<div id="page-actions" class="right-container column is-one-quarter is-one-fifth-desktop is-hidden-mobile is-hidden-tablet-only" data-bi-name="pageactions" role="complementary" aria-label="Page Actions">
+							<nav id="side-doc-outline" class="doc-outline is-fixed is-vertically-scrollable" data-bi-name="intopic toc" role="navigation" aria-label="Article Outline" style="width: 141.05px; top: 119.5px; bottom: 24px;">
+								<h3>In this article</h3>
+							<ol><li class="selected"><a href="#people-search-prerequisites">People search prerequisites</a></li><li><a href="#set-up-people-search">Set up people search</a></li><li><a href="#to-create-a-crawl-rule-to-authenticate-to-the-user-profile-service-application">To create a crawl rule to authenticate to the User Profile service application</a></li><li><a href="#to-remove-the-profile-store-url-from-the-preconfigured-content-source">To remove the profile store URL from the preconfigured content source</a></li><li><a href="#to-create-a-content-source-that-specifies-how-to-crawl-the-profile-store">To create a content source that specifies how to crawl the profile store</a></li><li><a href="#add-data-for-people-search">Add data for people search</a></li><li><a href="#crawl-the-profile-store">Crawl the profile store</a></li><li><a href="#see-also">See also</a></li></ol></nav>
+					</div>
+
+					<!--end of div.columns -->
+				</div>
+
+			<!--end of .primary-holder -->
+			</section>
+
+			<aside id="interactive-container" class="interactive-container is-visible-interactive column has-body-background-dark ">
+			</aside>
+		</div>
+
+		<!--end of .mainContainer -->
+	</div>
+
+	<div id="openFeedbackContainer" class="openfeedback-container">
+		<form aria-live="polite" aria-label="Your rating" class="rating has-default-focus rating-helpful-active" action="javascript:" data-bi-name="rating">
+			<button class="rating-close has-default-focus has-inner-focus docon docon-navigate-close" type="button" aria-label="Close" data-bi-name="rating-close"></button>
+			<button class="button is-primary rating-mobile-feedback" type="button" data-bi-name="rating-mobile-feedback">Feedback</button>
+			<div class="rating-helpful">
+				<label>Is this page helpful?</label>
+				<div class="buttons">
+					<button class="button is-primary" type="button" data-bi-name="rating-yes" data-bi-sat="1">Yes</button>
+					<button class="button is-primary" type="button" data-bi-name="rating-no" data-bi-sat="0">No</button>
+				</div>
+			</div>
+			<div class="rating-thanks1 has-default-focus">
+				<p class="x-hidden-focus" tabindex="-1">Thanks for the feedback!</p>
+				<p>Comments or suggestions? <a href="#" data-bi-name="rating-verbatim-link">Tell us here</a>.</p>
+			</div>
+			<div class="rating-thanks2">
+				<span class="x-hidden-focus" tabindex="-1">Thanks for the feedback!</span>
+			</div>
+			<div class="rating-verbatim has-default-focus">
+				<label for="rating-0">How can we improve?</label>
+				<textarea class="rating-textarea textarea" required="required" id="rating-0" placeholder="Please share your ideas. We welcome feedback in any language."></textarea>
+				<button class="button is-primary" type="submit" data-bi-name="rating-verbatim" disabled="disabled">Submit</button>
+			</div>
+		</form></div>
+
+	<div class="footerContainer has-default-focus is-hidden-interactive ">
+<footer id="footer" data-bi-name="footer" class="footer-layout uhf-container has-padding" role="contentinfo">
+
+    <a data-mscc-ic="false" class="locale-selector-link" href="https://docs.microsoft.com/en-us/locale?target=https://docs.microsoft.com/en-us/sharepoint/search/deploy-people-search" data-bi-name="select-locale"><span class="icon docon docon-world is-size-4 has-margin-right-small" aria-hidden="true"></span><span class="local-selector-link-text">English (United States)</span></a>
+
+    <ul class="links" data-bi-name="footerlinks">
+		<li><a data-mscc-ic="false" href="https://docs.microsoft.com/previous-versions/" data-bi-name="archivelink">Previous Version Docs</a></li>
+		<li><a data-mscc-ic="false" href="https://docs.microsoft.com/teamblog" data-bi-name="bloglink">Blog</a></li>
+		<li><a data-mscc-ic="false" href="https://docs.microsoft.com/contribute" data-bi-name="contributorGuide">Contribute</a></li>
+			<li><a data-mscc-ic="false" href="https://go.microsoft.com/fwlink/?LinkId=521839" data-bi-name="privacy">Privacy &amp; Cookies</a></li>
+		<li><a data-mscc-ic="false" href="https://docs.microsoft.com/en-us/legal/termsofuse" data-bi-name="termsofuse">Terms of Use</a></li>
+		<li><a data-mscc-ic="false" href="https://aka.ms/sitefeedback" data-bi-name="feedback">Site Feedback</a></li>
+		<li><a data-mscc-ic="false" href="https://www.microsoft.com/en-us/legal/intellectualproperty/Trademarks/EN-US.aspx" data-bi-name="trademarks">Trademarks</a></li>
+    </ul>
+</footer>
+	</div>
+
+	<div id="action-panel" role="region" aria-label="Action Panel" class="action-panel has-default-focus" tabindex="-1"></div>
+
+
+</body></html>
