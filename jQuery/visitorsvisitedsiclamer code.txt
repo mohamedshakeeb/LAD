@@ -1,0 +1,13 @@
+var username = _spPageContextInfo.userLoginName;
+if (window.location.href.indexOf("/Disclaimer.aspx")<=-1) {
+	getData("/_api/web/lists/GetByTitle('Visitors')/items?$filter=Title eq '"+username+"'").then(function (data) {
+
+		if(data.d.results.length <= 0){
+			window.location.href = "/Pages/Disclaimer.aspx";
+		} else {
+			$("body").show();
+		}
+	}, function (err) {
+		console.log('Error on disclaimer',err);
+	});
+}
