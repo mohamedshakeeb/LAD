@@ -1,0 +1,33 @@
+
+Call Web Service
+
+1. Url: Web URL/_vti_bin/Lists.asmx
+2. Web method: GetAttachmentCollection
+3. Web service input: ListName, ListID
+4. store result: varAttachmentxmlMT(Multiline text)
+
+Query XML
+
+1. Xml source: XML
+2. XML: varAttachmentxmlMT
+3. Process Using: /defaultNS:Attachments/defaultNS:Attachment
+4.store Result: colAttachments (Collection type)
+
+use ForeEach loop:
+1. target collection: colAttachments
+2. Result: varAttachmentURLLST (Single line text)
+
+Inside add Regular Expression
+
+1. Pattern: .+[/Attachments/].+[/]
+2. click on ====Ignore case
+3. input Type: varAttachmentURLLST
+4. result: VarAttachmentFileName (Single Line Text)
+
+use string builder
+
+Text: {WorkflowVariable:varAttachmentHTMLLink}<a href="{WorkflowVariable:varAttachmentURLST}">{WorkflowVariable:varAttachmentFileName}</a><br>
+
+result: varAttachmentHTMLLink( Multiline Text)
+
+
